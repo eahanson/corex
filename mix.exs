@@ -10,7 +10,8 @@ defmodule Corex.Mixfile do
       compilers: [:phoenix, :gettext] ++ Mix.compilers,
       start_permanent: Mix.env == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      escript: escript(),
     ]
   end
 
@@ -22,6 +23,10 @@ defmodule Corex.Mixfile do
       mod: {Corex.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
+  end
+
+  def escript do
+    [main_module: Corex.CLI, name: "cli", app: nil]
   end
 
   # Specifies which paths to compile per environment.
