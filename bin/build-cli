@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -e
+
+mix escript.build
+bin/cli help

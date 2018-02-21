@@ -3,5 +3,4 @@
 set -e
 
 mix deps.get
-mix escript.build
-bin/cli help
+bin/build-cli
