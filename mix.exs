@@ -26,7 +26,7 @@ defmodule Corex.Mixfile do
   end
 
   def escript do
-    [main_module: Corex.CLI, name: "cli", app: nil]
+    [main_module: Corex.CLI, name: "cli", app: nil, path: "./bin/cli"]
   end
 
   # Specifies which paths to compile per environment.
@@ -38,14 +38,15 @@ defmodule Corex.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:cowboy, "~> 1.0"},
+      {:gettext, "~> 0.11"},
       {:phoenix, "~> 1.3.0"},
-      {:phoenix_pubsub, "~> 1.0"},
       {:phoenix_ecto, "~> 3.2"},
-      {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 2.10"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
-      {:gettext, "~> 0.11"},
-      {:cowboy, "~> 1.0"}
+      {:phoenix_pubsub, "~> 1.0"},
+      {:postgrex, ">= 0.0.0"},
+      {:table_rex, "~> 0.10"},
     ]
   end
 

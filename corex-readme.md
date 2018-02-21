@@ -1,13 +1,12 @@
 # Corex
 
 ## First-time setup
-`mix deps.get`
-`mix escript.build`
+`bin/setup`
 `mix ecto.create` 
 
 ## CLI
 Build: `mix escript.build`
-Run  : `./cli`
+Run  : `bin/cli`
 
 ## Deps
 Install : `mix deps.get`
