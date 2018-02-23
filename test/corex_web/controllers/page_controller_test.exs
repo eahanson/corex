@@ -1,5 +1,5 @@
 defmodule CorexWeb.PageControllerTest do
-  use CorexWeb.ConnCase
+  use CorexWeb.ConnCase, async: true
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

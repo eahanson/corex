@@ -14,8 +14,17 @@ defmodule Corex.Color do
     value |> inspect |> colorize(color)
   end
 
-  def colorize(s, color) do
-    IO.ANSI.color(@colors[color]) <> s <> IO.ANSI.reset
+  def colorize(l, color) when is_list(l) do
+    l |> Enum.map(&(colorize(&1, color)))
+  end
+
+  def colorize(s, color, bold \\ false) do
+    [
+      IO.ANSI.color(@colors[color]),
+      (if bold, do: IO.ANSI.bright, else: nil),
+      s,
+      IO.ANSI.reset
+    ] |> Enum.join()
   end
 
   def monochrome(s) do
