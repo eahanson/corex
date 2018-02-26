@@ -3,4 +3,4 @@
 set -e
 
 mix escript.build
-bin/cli help
+bin/cli $1

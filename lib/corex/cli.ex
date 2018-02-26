@@ -9,24 +9,52 @@ defmodule Corex.CLI do
 
   defp parse_args(args) do
     {options, commands, _} = args |> OptionParser.parse
-    commands |> Enum.join(" ") |> run_cmd(options)
+    commands |> Enum.join(" ") |> run(options)
+  end
+
+  def run(command) do
+    run(command, nil)
+  end
+
+  def run(command, args) do
+    running command
+    run_cmd(command, args)
   end
 
   defp run_cmd("", _) do
-    run_cmd("help", [])
+    run "help"
   end
 
   defp run_cmd("help", _) do
-    running "help"
-
     table [
       ["help", "This message"],
       ["shipit", "Run tests and push"],
+      ["test", "Run tests"],
     ]
   end
 
   defp run_cmd("shipit", _) do
-    running "shipit"
+    run("test")
+    run("git-push")
+  end
+
+  defp run_cmd("test", _) do
+    exec("mix", ["test", "--color"])
+  end
+
+  defp run_cmd("git-push", _) do
+    exec("git", ["push"])
+  end
+
+  defp exec(command, args \\ []) do
+    [command, args] |> List.flatten |> Enum.join(" ") |> Color.puts(:cyan)
+    System.cmd(command, args, into: IO.stream(:stdio, :line))
+  end
+
+  defp with_timer(function) do
+    {usec, result} = :timer.tc(function)
+    seconds = usec |> Kernel./(1_000_000) |> Float.ceil |> round
+    {result, "#{seconds}s"}
   end
 
   defp running(command_title), do: running(command_title, [])

@@ -33,5 +33,6 @@ defmodule Corex.Color do
 
   def puts(s, color) do
     s |> colorize(color) |> IO.puts
+    s
   end
 end
