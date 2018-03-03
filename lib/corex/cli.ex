@@ -9,23 +9,14 @@ defmodule Corex.CLI do
 
   defp parse_args(args) do
     {options, commands, _} = args |> OptionParser.parse
-    commands |> Enum.join(" ") |> run(options)
+    commands |> Enum.join(" ") |> command(options)
   end
 
-  def run(command) do
-    run(command, nil)
+  defp command("", _) do
+    command("help", nil)
   end
 
-  def run(command, args) do
-    running command
-    run_cmd(command, args)
-  end
-
-  defp run_cmd("", _) do
-    run "help"
-  end
-
-  defp run_cmd("help", _) do
+  defp command("help", _) do
     table [
       ["help", "This message"],
       ["shipit", "Run tests and push"],
@@ -33,43 +24,27 @@ defmodule Corex.CLI do
     ]
   end
 
-  defp run_cmd("shipit", _) do
-    run("test")
-    run("git-push")
+  defp command("shipit", _) do
+    command("test", nil) && command("git-push", nil)
   end
 
-  defp run_cmd("test", _) do
-    exec("mix", ["test", "--color"])
+  defp command("test", _) do
+    exec("Running tests", "mix", ["test", "--color"])
   end
 
-  defp run_cmd("git-push", _) do
-    exec("git", ["push"])
+  defp command("git-push", _) do
+    exec("Pushing git", "git", ["push"])
   end
 
-  defp exec(command, args \\ []) do
-    [command, args] |> List.flatten |> Enum.join(" ") |> Color.puts(:cyan)
-    System.cmd(command, args, into: IO.stream(:stdio, :line))
-  end
-
-  defp with_timer(function) do
-    {usec, result} = :timer.tc(function)
-    seconds = usec |> Kernel./(1_000_000) |> Float.ceil |> round
-    {result, "#{seconds}s"}
-  end
-
-  defp running(command_title), do: running(command_title, [])
-
-  defp running(command_title, options) do
+  defp exec(description, command, args) do
     [
-      "bin/cli" |> Color.colorize(:yellow),
-      command_title |> Color.colorize(:yellow, :bright),
-      options |> Color.colorize(:yellow),
-      ":\n" |> Color.colorize(:yellow)
+      {"\n▶ #{description} ", :yellow},
+      {[command, args] |> List.flatten |> Enum.join(" ") |> Extra.String.surround("(", ")"), :cyan}
     ]
-    |> List.flatten
-    |> Extra.Enum.compact_blank
-    |> Enum.join(" ")
-    |> IO.puts
+    |> Color.puts
+
+    {_result, status} = System.cmd(command, args, into: IO.stream(:stdio, :line))
+    status == 0
   end
 
   defp table(rows) do

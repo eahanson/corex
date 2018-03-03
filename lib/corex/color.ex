@@ -14,6 +14,10 @@ defmodule Corex.Color do
     value |> inspect |> colorize(color)
   end
 
+  def colorize(l) when is_list(l) do
+    l |> Enum.map(fn {s, color} -> colorize(s, color) end) |> Enum.join
+  end
+
   def colorize(l, color) when is_list(l) do
     l |> Enum.map(&(colorize(&1, color)))
   end
@@ -29,6 +33,10 @@ defmodule Corex.Color do
 
   def monochrome(s) do
     s |> String.replace(~r"\e[\[;0-9]+m", "")
+  end
+
+  def puts(l) when is_list(l) do
+    colorize(l) |> IO.puts
   end
 
   def puts(s, color) do
