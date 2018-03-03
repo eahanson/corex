@@ -19,21 +19,42 @@ defmodule Corex.CLI do
   defp command("help", _) do
     table [
       ["help", "This message"],
+      ["doctor", "Check that everything is working"],
+      ["update", "Pull, migrate, and run doctor"],
       ["shipit", "Run tests and push"],
       ["test", "Run tests"],
     ]
   end
 
   defp command("shipit", _) do
-    command("test", nil) && command("git-push", nil)
+    command("test", nil) and
+    command("git", ["push"])
   end
 
   defp command("test", _) do
     exec("Running tests", "mix", ["test", "--color"])
   end
 
-  defp command("git-push", _) do
+  defp command("git", ["push"]) do
     exec("Pushing git", "git", ["push"])
+  end
+
+  defp command("git", ["pull"]) do
+    exec("Pulling git", "git", ["pull", "--rebase"])
+  end
+
+  defp command("migrate", _) do
+    exec("Migrating", "mix", ["ecto.migrate", "ecto.dump"])
+  end
+
+  defp command("doctor", _) do
+    true
+  end
+
+  defp command("update", _) do
+    command("git", ["pull"]) and
+    command("migrate", nil) and
+    command("doctor", nil)
   end
 
   defp exec(description, command, args) do
