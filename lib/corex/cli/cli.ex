@@ -48,7 +48,7 @@ defmodule Corex.CLI do
   end
 
   defp command("doctor", _) do
-    true
+    Corex.CLI.Doctor.run
   end
 
   defp command("update", _) do

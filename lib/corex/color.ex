@@ -43,4 +43,9 @@ defmodule Corex.Color do
     s |> colorize(color) |> IO.puts
     s
   end
+
+  def write(s, color) do
+    s |> colorize(color) |> IO.write
+    s
+  end
 end
