@@ -1,6 +1,5 @@
 defmodule Corex.CLI do
   alias Corex.Color
-  alias Corex.Extra
   alias TableRex.Table
 
   def main(args \\ []) do
@@ -27,7 +26,7 @@ defmodule Corex.CLI do
   end
 
   defp command("doctor", _) do
-    Corex.CLI.Doctor.run
+    exec("Doctor", &Corex.CLI.Doctor.run/0)
   end
 
   defp command("git", ["pull"]) do
@@ -58,15 +57,21 @@ defmodule Corex.CLI do
     command("doctor", nil)
   end
 
-  defp exec(description, command, args) do
-    [
-      {"\n▶ #{description} ", :yellow},
-      {[command, args] |> List.flatten |> Enum.join(" ") |> Extra.String.surround("(", ")"), :cyan}
-    ]
-    |> Color.puts
+  defp exec(description, fun) when is_function(fun) do
+    running(description)
+    fun.()
+  end
 
+  defp exec(description, command, args) do
+    running(description, [command, args] |> List.flatten |> Enum.join(" "))
     {_result, status} = System.cmd(command, args, into: IO.stream(:stdio, :line))
     status == 0
+  end
+
+  defp running(description, details \\ nil) do
+    "\n▶ #{description} " |> Color.write(:yellow)
+    if details, do: "(#{details})" |> Color.write(:cyan)
+    IO.puts ""
   end
 
   defp table(rows) do
