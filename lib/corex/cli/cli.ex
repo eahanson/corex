@@ -21,34 +21,35 @@ defmodule Corex.CLI do
       ["help", "This message"],
       ["doctor", "Check that everything is working"],
       ["update", "Pull, migrate, and run doctor"],
-      ["shipit", "Run tests and push"],
+      ["shipit", "Update, run tests and push"],
       ["test", "Run tests"],
     ]
   end
 
-  defp command("shipit", _) do
-    command("test", nil) and
-    command("git", ["push"])
-  end
-
-  defp command("test", _) do
-    exec("Running tests", "mix", ["test", "--color"])
-  end
-
-  defp command("git", ["push"]) do
-    exec("Pushing git", "git", ["push"])
+  defp command("doctor", _) do
+    Corex.CLI.Doctor.run
   end
 
   defp command("git", ["pull"]) do
     exec("Pulling git", "git", ["pull", "--rebase"])
   end
 
+  defp command("git", ["push"]) do
+    exec("Pushing git", "git", ["push"])
+  end
+
   defp command("migrate", _) do
     exec("Migrating", "mix", ["ecto.migrate", "ecto.dump"])
   end
 
-  defp command("doctor", _) do
-    Corex.CLI.Doctor.run
+  defp command("shipit", _) do
+    command("update", nil) and
+    command("test", nil) and
+    command("git", ["push"])
+  end
+
+  defp command("test", _) do
+    exec("Running tests", "mix", ["test", "--color"])
   end
 
   defp command("update", _) do
