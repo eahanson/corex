@@ -13,8 +13,28 @@ defmodule Corex.CLI.Homebrew do
     end
   end
 
+  def running?(service, cmd \\ &run_cmd/2) do
+    {result, status} = cmd.("brew", ["services", "list"])
+
+    if status == 0 do
+      [_headers | service_infos] = result |> String.split("\n")
+
+      service_info =
+        service_infos
+        |> Enum.map(&String.split/1)
+        |> Enum.reject(fn list -> length(list) < 2 end)
+        |> Enum.map(fn [name | [status | _rest]] -> {name, status} end)
+        |> Enum.find(fn {name, _} -> name == service end)
+
+      case service_info do
+        {_, "started"} -> true
+        _ -> false
+      end
+    end
+  end
+
   defp info(executable) do
-    {result, status} = System.cmd("brew", ["info", "--json=v1", "-installed", executable], stderr_to_stdout: true)
+    {result, status} = run_cmd("brew", ["info", "--json=v1", "-installed", executable])
 
     if status == 0 do
       [parsed] = result |> decode_json()
@@ -31,5 +51,9 @@ defmodule Corex.CLI.Homebrew do
     |> Enum.map(&Poison.decode/1)
     |> Enum.find(fn {status, _} -> status == :ok end)
     |> elem(1)
+  end
+
+  defp run_cmd(command, args) do
+    System.cmd(command, args, stderr_to_stdout: true)
   end
 end

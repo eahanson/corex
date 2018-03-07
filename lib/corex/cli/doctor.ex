@@ -10,14 +10,20 @@ defmodule Corex.CLI.Doctor do
     [
       check_homebrew("elixir"),
       check_homebrew_version("elixir", "1.5"),
+      check_homebrew("node"),
+      check_homebrew("yarn"),
+      check_homebrew("phantomjs"),
+      check_homebrew("heroku", "heroku/brew/heroku"),
+      check_homebrew("postgresql"),
+      check_homebrew_service("postgresql"),
     ]
   end
 
-  defp check_homebrew(executable) do
+  defp check_homebrew(executable, formula \\ nil) do
     {
       "#{executable} is installed",
       fn -> Homebrew.installed?(executable) end,
-      "brew install #{executable}"
+      "brew install #{formula || executable}"
     }
   end
 
@@ -26,6 +32,14 @@ defmodule Corex.CLI.Doctor do
       "version #{version_prefix}.x of #{executable} is installed",
       fn -> Homebrew.version?(executable, version_prefix) end,
       "brew info #{executable}"
+    }
+  end
+
+  defp check_homebrew_service(service) do
+    {
+      "#{service} is running",
+      fn -> Homebrew.running?(service) end,
+      "brew services start #{service}"
     }
   end
 

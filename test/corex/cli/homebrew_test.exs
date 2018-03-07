@@ -12,4 +12,36 @@ defmodule Corex.CLI.HomebrewTest do
       assert decoded |> hd() |> is_map()
     end
   end
+
+  describe "running?" do
+    test "when the service is running" do
+      result = """
+        Name       Status  User Plist
+        postgresql started erik /Users/erik/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+        mysql      started erik /Users/erik/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+      """
+
+      assert Homebrew.running?("postgresql", fn (_, _) -> {result, 0} end) == true
+    end
+
+    test "when the service is not running" do
+      result = """
+        Name       Status  User Plist
+        postgresql stopped
+        mysql      started erik /Users/erik/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+      """
+
+      assert Homebrew.running?("postgresql", fn (_, _) -> {result, 0} end) == false
+    end
+
+    test "when the service does not exist" do
+      result = """
+        Name       Status  User Plist
+        postgresql stopped
+        mysql      started erik /Users/erik/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+      """
+
+      assert Homebrew.running?("glorp", fn (_, _) -> {result, 0} end) == false
+    end
+  end
 end
