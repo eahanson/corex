@@ -19,9 +19,10 @@ defmodule Corex.CLI do
     table [
       ["help", "This message"],
       ["doctor", "Check that everything is working"],
-      ["update", "Pull, migrate, and run doctor"],
       ["shipit", "Update, run tests and push"],
+      ["server", "Run the server"],
       ["test", "Run tests"],
+      ["update", "Pull, migrate, and run doctor"],
     ]
   end
 
@@ -39,6 +40,11 @@ defmodule Corex.CLI do
 
   defp command("migrate", _) do
     exec("Migrating", "mix", ["ecto.migrate", "ecto.dump"])
+  end
+
+  defp command("server", _) do
+    command("doctor", nil) and
+    exec("Running server", "iex", ["-S", "mix", "phx.server"])
   end
 
   defp command("shipit", _) do
