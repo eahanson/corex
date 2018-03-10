@@ -1,8 +1,12 @@
 defmodule Corex.CLI.Commands do
   alias Corex.CLI
 
+  def command(name) do
+    command(name, nil)
+  end
+
   def command("", _) do
-    command("help", nil)
+    command("help")
   end
 
   def command("help", _) do
@@ -33,13 +37,13 @@ defmodule Corex.CLI.Commands do
   end
 
   def command("server", _) do
-    command("doctor", nil) and
+    command("doctor") and
     CLI.exec("Running server", "iex", ["-S", "mix", "phx.server"])
   end
 
   def command("shipit", _) do
-    command("update", nil) and
-    command("test", nil) and
+    command("update") and
+    command("test") and
     command("git", ["push"])
   end
 
@@ -49,7 +53,7 @@ defmodule Corex.CLI.Commands do
 
   def command("update", _) do
     command("git", ["pull"]) and
-    command("migrate", nil) and
-    command("doctor", nil)
+    command("migrate") and
+    command("doctor")
   end
 end
