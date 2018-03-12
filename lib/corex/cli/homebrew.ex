@@ -34,7 +34,7 @@ defmodule Corex.CLI.Homebrew do
   end
 
   defp info(executable) do
-    {result, status} = run_cmd("brew", ["info", "--json=v1", "-installed", executable])
+    {result, status} = run_cmd("brew", ["info", "--json=v1", executable])
 
     if status == 0 do
       [parsed] = result |> decode_json()
