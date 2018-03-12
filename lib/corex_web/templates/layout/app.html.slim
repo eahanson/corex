@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+  head
+    meta charset="utf-8"
+    title "Corex"
+
+    meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
+
+    meta name="description" content="Corex"
+
+    link rel="stylesheet" href="#{static_path(@conn, "/css/app.css")}"
+
+  body
+    nav.navbar role="navigation" aria-label="main navigation"
+      .container
+        .navbar-brand
+          .navbar-item.logo
+            = link "Corex", to: "/"
+
+    section#flash
+      .container.is-fluid
+        p.alert.alert-info role="alert"
+          = get_flash(@conn, :info)
+        p.alert.alert-danger role="alert"
+          = get_flash(@conn, :error)
+
+    section#main
+      .container.is-fluid
+        = render @view_module, @view_template, assigns

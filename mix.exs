@@ -21,7 +21,11 @@ defmodule Corex.Mixfile do
   def application do
     [
       mod: {Corex.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [
+        :logger,
+        :phoenix_slime,
+        :runtime_tools
+      ]
     ]
   end
 
@@ -45,6 +49,7 @@ defmodule Corex.Mixfile do
       {:phoenix_html, "~> 2.10"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:phoenix_pubsub, "~> 1.0"},
+      {:phoenix_slime, "~> 0.9.0"},
       {:postgrex, ">= 0.0.0"},
       {:table_rex, "~> 0.10"},
     ]
