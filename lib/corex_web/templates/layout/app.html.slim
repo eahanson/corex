@@ -11,20 +11,8 @@ html(lang="en")
 
     link rel="stylesheet" href="#{static_path(@conn, "/css/app.css")}"
 
+    script defer="defer" src="//use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"
+    script defer="defer" src="//use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"
+
   body
-    nav.navbar role="navigation" aria-label="main navigation"
-      .container
-        .navbar-brand
-          .navbar-item.logo
-            = link "Corex", to: "/"
-
-    section#flash
-      .container.is-fluid
-        p.alert.alert-info role="alert"
-          = get_flash(@conn, :info)
-        p.alert.alert-danger role="alert"
-          = get_flash(@conn, :error)
-
-    section#main
-      .container.is-fluid
-        = render @view_module, @view_template, assigns
+    = render @view_module, @view_template, assigns
