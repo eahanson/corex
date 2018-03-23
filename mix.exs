@@ -24,7 +24,8 @@ defmodule Corex.Mixfile do
       extra_applications: [
         :logger,
         :phoenix_slime,
-        :runtime_tools
+        :runtime_tools,
+        :timex,
       ]
     ]
   end
@@ -52,6 +53,7 @@ defmodule Corex.Mixfile do
       {:phoenix_slime, "~> 0.9.0"},
       {:postgrex, ">= 0.0.0"},
       {:table_rex, "~> 1.0"},
+      {:timex, "~> 3.0"},
     ]
   end
 
