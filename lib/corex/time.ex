@@ -30,4 +30,18 @@ defmodule Corex.Time do
   def format(time, :date) do
     Timex.format!(time, "%Y %b %d", :strftime)
   end
+
+  def ago(older, newer) do
+    ago(older, newer, [{:years, "yr"}, {:months, "mo"}, {:days, "d"}, {:hours, "h"}, {:minutes, "m"}, {:seconds, "s"}])
+  end
+
+  defp ago(older, newer, [{unit, suffix} | tail] = _units) do
+    diff = Timex.Comparable.diff(newer, older, unit)
+
+    if diff >= 2 or length(tail) == 0 do
+      "#{diff}#{suffix}"
+    else
+      ago(older, newer, tail)
+    end
+  end
 end
