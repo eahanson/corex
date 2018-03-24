@@ -3,45 +3,62 @@ defmodule Corex.CLI.HomebrewTest do
 
   alias Corex.CLI.Homebrew
 
-  describe "decode_json" do
-    test "when there is some stderr output" do
-      json = "/usr/local/Homebrew/Library/Homebrew/brew.rb (Formulary::FormulaLoader): loading /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Formula/elixir.rb\n[{\"name\":\"elixir\",\"full_name\":\"elixir\",\"desc\":\"Functional metaprogramming aware language built on Erlang VM\",\"homepage\":\"https://elixir-lang.org/\",\"oldname\":null,\"aliases\":[],\"versions\":{\"stable\":\"1.6.0\",\"bottle\":true,\"devel\":null,\"head\":\"HEAD\"},\"revision\":0,\"version_scheme\":0,\"installed\":[{\"version\":\"1.5.2\",\"used_options\":[],\"built_as_bottle\":true,\"poured_from_bottle\":true,\"runtime_dependencies\":[{\"full_name\":\"erlang\",\"version\":\"20.1\"}],\"installed_as_dependency\":false,\"installed_on_request\":true}],\"linked_keg\":\"1.5.2\",\"pinned\":false,\"outdated\":true,\"keg_only\":false,\"dependencies\":[\"erlang\"],\"recommended_dependencies\":[],\"optional_dependencies\":[],\"build_dependencies\":[],\"conflicts_with\":[],\"caveats\":null,\"requirements\":[],\"options\":[],\"bottle\":{\"stable\":{\"rebuild\":0,\"cellar\":\"/usr/local/Cellar\",\"prefix\":\"/usr/local\",\"root_url\":\"https://homebrew.bintray.com/bottles\",\"files\":{\"high_sierra\":{\"url\":\"https://homebrew.bintray.com/bottles/elixir-1.6.0.high_sierra.bottle.tar.gz\",\"sha256\":\"2674d6347ddad33a77771264e49f91e3dd7b49b64ea8bac5cde11476a352c7e0\"},\"sierra\":{\"url\":\"https://homebrew.bintray.com/bottles/elixir-1.6.0.sierra.bottle.tar.gz\",\"sha256\":\"fcb95bb5b7415303c272da91e4a369233c4cb466f6af16eb1e6a5396ee3e7111\"},\"el_capitan\":{\"url\":\"https://homebrew.bintray.com/bottles/elixir-1.6.0.el_capitan.bottle.tar.gz\",\"sha256\":\"8d3380a735359b041d72fa5a2f2d6125b059601a4a50bdb7ff8b73256eb601d2\"}}}}}]\n"
-      decoded = Homebrew.decode_json(json)
+  describe "packages" do
+    test "returns package info" do
+      info = Homebrew.packages(fn (_, _) -> {File.read!("test/support/fixtures/homebrew_info.json"), 0} end)
+      assert info.installed |> List.first == {"autoconf", "2.69"}
+    end
+  end
 
-      assert decoded |> is_list()
-      assert decoded |> hd() |> is_map()
+  describe "services" do
+    test "returns service info" do
+      result = """
+        Name       Status  User Plist
+        postgresql stopped
+        mysql      started erik /Users/erik/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+      """
+
+      info = Homebrew.services(fn (_, _) -> {result, 0} end)
+      assert info.all == [
+          {"postgresql", "stopped"},
+          {"mysql", "started"}
+        ]
     end
   end
 
   describe "running?" do
-    test "when the service is running" do
-      result = """
-        Name       Status  User Plist
-        postgresql started erik /Users/erik/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
-        mysql      started erik /Users/erik/Library/LaunchAgents/homebrew.mxcl.mysql.plist
-      """
-
-      assert Homebrew.running?("postgresql", fn (_, _) -> {result, 0} end) == true
+    setup do
+      [services: %Homebrew.Services{all: [{"postgresql", "stopped"}, {"mysql", "started"}]}]
     end
 
-    test "when the service is not running" do
-      result = """
-        Name       Status  User Plist
-        postgresql stopped
-        mysql      started erik /Users/erik/Library/LaunchAgents/homebrew.mxcl.mysql.plist
-      """
-
-      assert Homebrew.running?("postgresql", fn (_, _) -> {result, 0} end) == false
+    test "returns true if the service is running", %{services: services} do
+      assert Homebrew.running?(services, "mysql")
     end
 
-    test "when the service does not exist" do
-      result = """
-        Name       Status  User Plist
-        postgresql stopped
-        mysql      started erik /Users/erik/Library/LaunchAgents/homebrew.mxcl.mysql.plist
-      """
+    test "returns false if the service is not running", %{services: services} do
+      refute Homebrew.running?(services, "postgresql")
+    end
 
-      assert Homebrew.running?("glorp", fn (_, _) -> {result, 0} end) == false
+    test "returns false if the service is not listed", %{services: services} do
+      refute Homebrew.running?(services, "glorp")
+    end
+  end
+
+  describe "installed?" do
+    setup do
+      [packages: %Homebrew.Packages{installed: [{"postgresql", "1.1"}, {"mysql", "1.2"}]}]
+    end
+
+    test "returns true if the package is installed", %{packages: packages} do
+      assert Homebrew.installed?(packages, "postgresql")
+    end
+
+    test "returns false if the package is not installed", %{packages: packages} do
+      refute Homebrew.installed?(packages, "glorp")
+    end
+
+    test "returns false if the package is installed but the version does not match", %{packages: packages} do
+      refute Homebrew.installed?(packages, "postgresql", version: "9.9")
     end
   end
 end

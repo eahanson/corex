@@ -1,58 +1,55 @@
 defmodule Corex.CLI.Doctor do
   alias Corex.Color
   alias Corex.CLI.Homebrew
+  alias Corex.Extra
 
   def run do
-    checks() |> Enum.all?(&check/1)
+    checks() |> Enum.all?(&run_check/1)
   end
 
   defp checks do
+    homebrew_packages = Homebrew.packages()
+    homebrew_services = Homebrew.services()
+
     [
-      check_homebrew("elixir"),
-      check_homebrew_version("elixir", "1.5"),
-      check_homebrew("node"),
-      check_homebrew("yarn"),
-      check_homebrew("phantomjs"),
-      check_homebrew("heroku", "heroku/brew/heroku"),
-      check_homebrew("postgresql"),
-      check_homebrew_service("postgresql"),
-      check_file_exists("Javascript/Yarn/Brunch is set up", "assets/node_modules", "(cd assets && yarn install)")
+      check(homebrew_packages, "elixir", version: "1.5"),
+      check(homebrew_packages, "node"),
+      check(homebrew_packages, "yarn"),
+      check(homebrew_packages, "phantomjs"),
+      check(homebrew_packages, "heroku", formula: "heroku/brew/heroku"),
+      check(homebrew_packages, "postgresql"),
+      check(homebrew_services, "postgresql"),
+      check(:file, "assets/node_modules", remedy: "(cd assets && yarn install)")
     ]
   end
 
-  defp check_homebrew(executable, formula \\ nil) do
+  defp check(_, _, opts \\ %{})
+
+  defp check(%Homebrew.Packages{} = packages, package, opts) do
     {
-      "#{executable} is installed",
-      fn -> Homebrew.installed?(executable) end,
-      "brew install #{formula || executable}"
+      [package, opts[:version], "is installed"] |> Extra.Enum.compact |> Enum.join(" "),
+      fn -> packages |> Homebrew.installed?(package, opts) end,
+      "brew install #{opts[:formula] || package}"
     }
   end
 
-  defp check_homebrew_version(executable, version_prefix) do
+  defp check(:file, file, opts) do
     {
-      "version #{version_prefix}.x of #{executable} is installed",
-      fn -> Homebrew.version?(executable, version_prefix) end,
-      "brew info #{executable}"
+      "File/directory '#{file}' exists",
+      fn -> File.exists?(file) end,
+      opts[:remedy]
     }
   end
 
-  defp check_homebrew_service(service) do
+  defp check(%Homebrew.Services{} = services, service, _opts) do
     {
       "#{service} is running",
-      fn -> Homebrew.running?(service) end,
+      fn -> services |> Homebrew.running?(service) end,
       "brew services start #{service}"
     }
   end
 
-  defp check_file_exists(description, file, remedy) do
-    {
-      description,
-      fn -> File.exists?(file) end,
-      remedy
-    }
-  end
-
-  defp check({description, command, remedy}) do
+  defp run_check({description, command, remedy}) do
     "Checking: " <> description <> "... " |> Color.write(:cyan)
 
     success? = command.()

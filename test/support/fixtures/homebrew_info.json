@@ -1,0 +1,3416 @@
+[
+  {
+    "name": "autoconf",
+    "full_name": "autoconf",
+    "desc": "Automatic configure script builder",
+    "homepage": "https://www.gnu.org/software/autoconf",
+    "oldname": null,
+    "aliases": [
+      "autoconf@2.69"
+    ],
+    "versions": {
+      "stable": "2.69",
+      "bottle": true,
+      "devel": null,
+      "head": null
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "2.69",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [],
+        "installed_as_dependency": true,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": "2.69",
+    "pinned": false,
+    "outdated": false,
+    "keg_only": false,
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [],
+    "bottle": {
+      "stable": {
+        "rebuild": 4,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/autoconf-2.69.high_sierra.bottle.4.tar.gz",
+            "sha256": "63957a3952b7af5496012b3819c9956822fd7d895d63339c23fdc65c502e1a40"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/autoconf-2.69.sierra.bottle.4.tar.gz",
+            "sha256": "a76fca79a00f733c1c9f75600b906de4755dd3fbb595b1b55ded1347ac141607"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/autoconf-2.69.el_capitan.bottle.4.tar.gz",
+            "sha256": "ded69c7dac4bc8747e52dca37d6d561e55e3162649d3805572db0dc2f940a4b8"
+          },
+          "yosemite": {
+            "url": "https://homebrew.bintray.com/bottles/autoconf-2.69.yosemite.bottle.4.tar.gz",
+            "sha256": "daf70656aa9ff8b2fb612324222aa6b5e900e2705c9f555198bcd8cd798d7dd0"
+          },
+          "mavericks": {
+            "url": "https://homebrew.bintray.com/bottles/autoconf-2.69.mavericks.bottle.4.tar.gz",
+            "sha256": "d153b3318754731ff5e91b45b2518c75880993fa9d1f312a03696e2c1de0c9d5"
+          },
+          "mountain_lion": {
+            "url": "https://homebrew.bintray.com/bottles/autoconf-2.69.mountain_lion.bottle.4.tar.gz",
+            "sha256": "37e77a2e7ca6d479f0a471d5f5d828efff621bd051c1884ff1363d77c5c4675e"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "automake",
+    "full_name": "automake",
+    "desc": "Tool for generating GNU Standards-compliant Makefiles",
+    "homepage": "https://www.gnu.org/software/automake/",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "1.16.1",
+      "bottle": true,
+      "devel": null,
+      "head": null
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "1.15.1",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [
+          {
+            "full_name": "autoconf",
+            "version": "2.69"
+          }
+        ],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": "1.15.1",
+    "pinned": false,
+    "outdated": true,
+    "keg_only": false,
+    "dependencies": [
+      "autoconf"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/automake-1.16.1.high_sierra.bottle.tar.gz",
+            "sha256": "f9d2f7f913917ce686bf8dab00fe5c5f2c971038ed91b2a6ec8cd6be9efd9b31"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/automake-1.16.1.sierra.bottle.tar.gz",
+            "sha256": "f9d2f7f913917ce686bf8dab00fe5c5f2c971038ed91b2a6ec8cd6be9efd9b31"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/automake-1.16.1.el_capitan.bottle.tar.gz",
+            "sha256": "397f56ce7582b559171de62dfa772fc1a90d99bb1f03ae2f20e6824a243f7ae7"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "coreutils",
+    "full_name": "coreutils",
+    "desc": "GNU File, Shell, and Text utilities",
+    "homepage": "https://www.gnu.org/software/coreutils",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "8.29",
+      "bottle": true,
+      "devel": null,
+      "head": "HEAD"
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "8.29",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": "8.29",
+    "pinned": false,
+    "outdated": false,
+    "keg_only": false,
+    "dependencies": [
+      "gmp"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [
+      "gmp"
+    ],
+    "build_dependencies": [],
+    "conflicts_with": [
+      "ganglia",
+      "gegl",
+      "idutils",
+      "aardvark_shell_utils"
+    ],
+    "caveats": "All commands have been installed with the prefix 'g'.\n\nIf you really need to use these commands with their normal names, you\ncan add a \"gnubin\" directory to your PATH from your bashrc like:\n\n    PATH=\"/usr/local/opt/coreutils/libexec/gnubin:$PATH\"\n\nAdditionally, you can access their man pages with normal names if you add\nthe \"gnuman\" directory to your MANPATH from your bashrc as well:\n\n    MANPATH=\"/usr/local/opt/coreutils/libexec/gnuman:$MANPATH\"\n\n",
+    "requirements": [],
+    "options": [
+      {
+        "option": "--with-gmp",
+        "description": "Build with gmp support"
+      }
+    ],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": "/usr/local/Cellar",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/coreutils-8.29.high_sierra.bottle.tar.gz",
+            "sha256": "20e12e8aaa50778db12accc12fc2ae5e29cdd58988064dbc912bcfb10a106272"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/coreutils-8.29.sierra.bottle.tar.gz",
+            "sha256": "83cb185057a6add9b9289504801240f33020494c4b85af07272a85050cd99f65"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/coreutils-8.29.el_capitan.bottle.tar.gz",
+            "sha256": "0c25b2cebfd54bf325360b6ab566df78a6711f5526fd44fc244558748bd27475"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "direnv",
+    "full_name": "direnv",
+    "desc": "Load/unload environment variables based on $PWD",
+    "homepage": "https://direnv.net/",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "2.15.2",
+      "bottle": true,
+      "devel": null,
+      "head": "HEAD"
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "2.13.1",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": "2.13.1",
+    "pinned": false,
+    "outdated": true,
+    "keg_only": false,
+    "dependencies": [
+      "go"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [
+      "go"
+    ],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/direnv-2.15.2.high_sierra.bottle.tar.gz",
+            "sha256": "b4509e97d0d14117549bd3f644f0ec54c2085eb2c16e694ccf149c34d22b1889"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/direnv-2.15.2.sierra.bottle.tar.gz",
+            "sha256": "8daab336341ef82968626d04f884455165da4a80863675caf86848aac2e2c691"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/direnv-2.15.2.el_capitan.bottle.tar.gz",
+            "sha256": "88e6545130af2f187e3b4242c421a0bb79e1f304de8c111ceac57ad0cc004666"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "elixir",
+    "full_name": "elixir",
+    "desc": "Functional metaprogramming aware language built on Erlang VM",
+    "homepage": "https://elixir-lang.org/",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "1.6.3",
+      "bottle": true,
+      "devel": null,
+      "head": "HEAD"
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "1.5.2",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [
+          {
+            "full_name": "erlang",
+            "version": "20.1"
+          }
+        ],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": "1.5.2",
+    "pinned": false,
+    "outdated": true,
+    "keg_only": false,
+    "dependencies": [
+      "erlang"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": "/usr/local/Cellar",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/elixir-1.6.3.high_sierra.bottle.tar.gz",
+            "sha256": "751382abf7635800e882235dd51e5bb24dadaec680852bac762073f4647ed4fc"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/elixir-1.6.3.sierra.bottle.tar.gz",
+            "sha256": "924b2bf01e97f3c6d05aeb245414eabefbdf24b6bf3c20a1b30f9ac9e8ec0a41"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/elixir-1.6.3.el_capitan.bottle.tar.gz",
+            "sha256": "8aea171237392b624d565204abee77b2c7d8d6ad3d254c06124569ffcb742579"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "erlang",
+    "full_name": "erlang",
+    "desc": "Programming language for highly scalable real-time systems",
+    "homepage": "https://www.erlang.org/",
+    "oldname": null,
+    "aliases": [
+      "erlang@20"
+    ],
+    "versions": {
+      "stable": "20.2.4",
+      "bottle": true,
+      "devel": null,
+      "head": "HEAD"
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "20.1.1",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [
+          {
+            "full_name": "openssl",
+            "version": "1.0.2l"
+          },
+          {
+            "full_name": "jpeg",
+            "version": "9b"
+          },
+          {
+            "full_name": "libpng",
+            "version": "1.6.32"
+          },
+          {
+            "full_name": "libtiff",
+            "version": "4.0.8"
+          },
+          {
+            "full_name": "wxmac",
+            "version": "3.0.3.1"
+          }
+        ],
+        "installed_as_dependency": true,
+        "installed_on_request": false
+      }
+    ],
+    "linked_keg": "20.1.1",
+    "pinned": false,
+    "outdated": true,
+    "keg_only": false,
+    "dependencies": [
+      "autoconf",
+      "automake",
+      "libtool",
+      "openssl",
+      "fop",
+      "wxmac"
+    ],
+    "recommended_dependencies": [
+      "wxmac"
+    ],
+    "optional_dependencies": [
+      "fop"
+    ],
+    "build_dependencies": [
+      "autoconf",
+      "automake",
+      "libtool"
+    ],
+    "conflicts_with": [],
+    "caveats": "Man pages can be found in:\n  /usr/local/opt/erlang/lib/erlang/man\n\nAccess them with `erl -man`, or add this directory to MANPATH.\n",
+    "requirements": [
+      {
+        "name": "java",
+        "cask": "java",
+        "download": "https://www.oracle.com/technetwork/java/javase/downloads/index.html"
+      }
+    ],
+    "options": [
+      {
+        "option": "--without-hipe",
+        "description": "Disable building hipe; fails on various macOS systems"
+      },
+      {
+        "option": "--with-native-libs",
+        "description": "Enable native library compilation"
+      },
+      {
+        "option": "--with-dirty-schedulers",
+        "description": "Enable experimental dirty schedulers"
+      },
+      {
+        "option": "--with-java",
+        "description": "Build jinterface application"
+      },
+      {
+        "option": "--without-docs",
+        "description": "Do not install documentation"
+      },
+      {
+        "option": "--with-fop",
+        "description": "Build with fop support"
+      },
+      {
+        "option": "--without-wxmac",
+        "description": "Build without wxmac support"
+      }
+    ],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/erlang-20.2.4.high_sierra.bottle.tar.gz",
+            "sha256": "e871f14a23eccf573a5401094e5770224ab3f8f2a160bb2d00f41a7b5e2aa72e"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/erlang-20.2.4.sierra.bottle.tar.gz",
+            "sha256": "31fa89fb6bac105c02f4e8c2674c35315c560c5d096526d96ea286878e4d64f2"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/erlang-20.2.4.el_capitan.bottle.tar.gz",
+            "sha256": "af6cfa114f204c95c0487d8525c422b159adc00cc53b0e4f8bec571fba1c539b"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "fish",
+    "full_name": "fish",
+    "desc": "User-friendly command-line shell for UNIX-like operating systems",
+    "homepage": "https://fishshell.com",
+    "oldname": null,
+    "aliases": [
+      "fishfish"
+    ],
+    "versions": {
+      "stable": "2.7.1",
+      "bottle": true,
+      "devel": null,
+      "head": "HEAD"
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "2.6.0",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [
+          {
+            "full_name": "pcre2",
+            "version": "10.30"
+          }
+        ],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      },
+      {
+        "version": "2.7.1",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [
+          {
+            "full_name": "pcre2",
+            "version": "10.30"
+          }
+        ],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": "2.7.1",
+    "pinned": false,
+    "outdated": false,
+    "keg_only": false,
+    "dependencies": [
+      "pcre2"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": "You will need to add:\n  /usr/local/bin/fish\nto /etc/shells.\n\nThen run:\n  chsh -s /usr/local/bin/fish\nto make fish your default shell.\n",
+    "requirements": [],
+    "options": [],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": "/usr/local/Cellar",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/fish-2.7.1.high_sierra.bottle.tar.gz",
+            "sha256": "b75d873885ecfe3a6e28e8de9a7f292b03c3fb3ebedd3d6ac7a74219148af04e"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/fish-2.7.1.sierra.bottle.tar.gz",
+            "sha256": "20e6c49692cef13eaadd8ee94e9831557130d449405fe12bfd9403659865f5b3"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/fish-2.7.1.el_capitan.bottle.tar.gz",
+            "sha256": "017610f146a161b4383b905a675ac935568a721ed042c3f41f97aaa7f4b5037b"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "fontconfig",
+    "full_name": "fontconfig",
+    "desc": "XML-based font configuration API for X Windows",
+    "homepage": "https://wiki.freedesktop.org/www/Software/fontconfig/",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "2.12.6",
+      "bottle": true,
+      "devel": null,
+      "head": "HEAD"
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "2.12.6",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [
+          {
+            "full_name": "libpng",
+            "version": "1.6.32"
+          },
+          {
+            "full_name": "freetype",
+            "version": "2.8.1"
+          }
+        ],
+        "installed_as_dependency": true,
+        "installed_on_request": false
+      }
+    ],
+    "linked_keg": "2.12.6",
+    "pinned": false,
+    "outdated": false,
+    "keg_only": false,
+    "dependencies": [
+      "pkg-config",
+      "freetype"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [
+      "pkg-config"
+    ],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": "/usr/local/Cellar",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/fontconfig-2.12.6.high_sierra.bottle.tar.gz",
+            "sha256": "8c9ff65654be03a4003d0e0d9e27fa1f03641aceadebd0f2a1b2f66cc1c2b54a"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/fontconfig-2.12.6.sierra.bottle.tar.gz",
+            "sha256": "cfa65615f05fe6e0547be2738bed94d21f05491df2edf1e246da8a3669225e4d"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/fontconfig-2.12.6.el_capitan.bottle.tar.gz",
+            "sha256": "664c8faf84a8bd6e80ebd8ca175c8e0a4cb6087f867e208cea4d9f8cda643134"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "freetype",
+    "full_name": "freetype",
+    "desc": "Software library to render fonts",
+    "homepage": "https://www.freetype.org/",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "2.9",
+      "bottle": true,
+      "devel": null,
+      "head": null
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "2.8.1",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [
+          {
+            "full_name": "libpng",
+            "version": "1.6.32"
+          }
+        ],
+        "installed_as_dependency": true,
+        "installed_on_request": false
+      },
+      {
+        "version": "2.9",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [
+          {
+            "full_name": "libpng",
+            "version": "1.6.34"
+          }
+        ],
+        "installed_as_dependency": true,
+        "installed_on_request": false
+      }
+    ],
+    "linked_keg": "2.9",
+    "pinned": false,
+    "outdated": false,
+    "keg_only": false,
+    "dependencies": [
+      "libpng"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [
+      {
+        "option": "--without-subpixel",
+        "description": "Disable sub-pixel rendering (a.k.a. LCD rendering, or ClearType)"
+      }
+    ],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/freetype-2.9.high_sierra.bottle.tar.gz",
+            "sha256": "2978dbec18cf06827ddc93ee04262bc3f78b14a9ed2e91058b53a8a997f81451"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/freetype-2.9.sierra.bottle.tar.gz",
+            "sha256": "8680a89d47fa9eea998d230ec1f7d39422f87fc3152a0ab3b6b936832d9a154e"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/freetype-2.9.el_capitan.bottle.tar.gz",
+            "sha256": "1e66987caa45ffcbe3cd18924f7b1a82c37207a23c89085d27ad3008df5ef914"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "git",
+    "full_name": "git",
+    "desc": "Distributed revision control system",
+    "homepage": "https://git-scm.com",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "2.16.2",
+      "bottle": true,
+      "devel": null,
+      "head": "HEAD"
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "2.14.2",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": "2.14.2",
+    "pinned": false,
+    "outdated": true,
+    "keg_only": false,
+    "dependencies": [
+      "pcre2",
+      "gettext",
+      "openssl",
+      "curl",
+      "perl"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [
+      "pcre2",
+      "gettext",
+      "openssl",
+      "curl",
+      "perl"
+    ],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [
+      {
+        "option": "--with-blk-sha1",
+        "description": "Compile with the block-optimized SHA1 implementation"
+      },
+      {
+        "option": "--without-completions",
+        "description": "Disable bash/zsh completions from 'contrib' directory"
+      },
+      {
+        "option": "--with-subversion",
+        "description": "Use Homebrew's version of SVN"
+      },
+      {
+        "option": "--with-persistent-https",
+        "description": "Build git-remote-persistent-https from 'contrib' directory"
+      },
+      {
+        "option": "--with-pcre2",
+        "description": "Build with pcre2 support"
+      },
+      {
+        "option": "--with-gettext",
+        "description": "Build with gettext support"
+      },
+      {
+        "option": "--with-openssl",
+        "description": "Build with Homebrew's OpenSSL instead of using CommonCrypto"
+      },
+      {
+        "option": "--with-curl",
+        "description": "Use Homebrew's version of cURL library"
+      },
+      {
+        "option": "--with-perl",
+        "description": "Build against Homebrew's Perl rather than system default"
+      }
+    ],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": "/usr/local/Cellar",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/git-2.16.2.high_sierra.bottle.tar.gz",
+            "sha256": "0222b2e2fef8adff1feb479c003987c392c7a4eb9b23eccd6160d56aa732e1c2"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/git-2.16.2.sierra.bottle.tar.gz",
+            "sha256": "7770770f5f29100a9b9142239d1dc2a8d68d457c4d3ef1fcfc0f694ba2e9f8d4"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/git-2.16.2.el_capitan.bottle.tar.gz",
+            "sha256": "206d2a21710b4b4d914343f531529c74234f668950dc89788492cb9f6242c4cb"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "heroku",
+    "full_name": "heroku/brew/heroku",
+    "desc": "Everything you need to get started with Heroku",
+    "homepage": "https://cli.heroku.com",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "6.15.31",
+      "bottle": false,
+      "devel": null,
+      "head": null
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "6.14.33",
+        "used_options": [],
+        "built_as_bottle": false,
+        "poured_from_bottle": false,
+        "runtime_dependencies": [
+          {
+            "full_name": "heroku/brew/heroku-node",
+            "version": "8.6.0"
+          }
+        ],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": "6.14.33",
+    "pinned": false,
+    "outdated": true,
+    "keg_only": false,
+    "dependencies": [
+      "heroku/brew/heroku-node"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [],
+    "bottle": {}
+  },
+  {
+    "name": "heroku-node",
+    "full_name": "heroku/brew/heroku-node",
+    "desc": "node.js dependency for heroku",
+    "homepage": "https://cli.heroku.com",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "9.7.1",
+      "bottle": false,
+      "devel": null,
+      "head": null
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "8.6.0",
+        "used_options": [],
+        "built_as_bottle": false,
+        "poured_from_bottle": false,
+        "runtime_dependencies": [],
+        "installed_as_dependency": true,
+        "installed_on_request": false
+      }
+    ],
+    "linked_keg": "8.6.0",
+    "pinned": false,
+    "outdated": true,
+    "keg_only": false,
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [],
+    "bottle": {}
+  },
+  {
+    "name": "icu4c",
+    "full_name": "icu4c",
+    "desc": "C/C++ and Java libraries for Unicode and globalization",
+    "homepage": "http://site.icu-project.org/",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "60.2",
+      "bottle": true,
+      "devel": null,
+      "head": "HEAD"
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "59.1",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [],
+        "installed_as_dependency": true,
+        "installed_on_request": false
+      },
+      {
+        "version": "60.2",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [],
+        "installed_as_dependency": true,
+        "installed_on_request": false
+      }
+    ],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false,
+    "keg_only": true,
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/icu4c-60.2.high_sierra.bottle.tar.gz",
+            "sha256": "cd6252141fd00076f67a01daceec4c5dfdea033c6a63b1a0ea7c98653757eb48"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/icu4c-60.2.sierra.bottle.tar.gz",
+            "sha256": "2d8e104b3346632e091386e8640d2f3033e38654341b9a670d334832b1432c11"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/icu4c-60.2.el_capitan.bottle.tar.gz",
+            "sha256": "54cc020520f422f5a708b20e1bec4e009cb7a52e7a150a3dd8edcfaa4f591200"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "imagemagick",
+    "full_name": "imagemagick",
+    "desc": "Tools and libraries to manipulate images in many formats",
+    "homepage": "https://www.imagemagick.org/",
+    "oldname": null,
+    "aliases": [
+      "imagemagick@7"
+    ],
+    "versions": {
+      "stable": "7.0.7-25",
+      "bottle": true,
+      "devel": null,
+      "head": "HEAD"
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "7.0.7-21",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [
+          {
+            "full_name": "libtool",
+            "version": "2.4.6"
+          },
+          {
+            "full_name": "xz",
+            "version": "5.2.3"
+          },
+          {
+            "full_name": "jpeg",
+            "version": "9b"
+          },
+          {
+            "full_name": "libpng",
+            "version": "1.6.34"
+          },
+          {
+            "full_name": "libtiff",
+            "version": "4.0.9"
+          },
+          {
+            "full_name": "freetype",
+            "version": "2.9"
+          }
+        ],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": "7.0.7-21",
+    "pinned": false,
+    "outdated": true,
+    "keg_only": false,
+    "dependencies": [
+      "pkg-config",
+      "libtool",
+      "xz",
+      "jpeg",
+      "libpng",
+      "libtiff",
+      "freetype",
+      "fontconfig",
+      "little-cms",
+      "little-cms2",
+      "libwmf",
+      "librsvg",
+      "liblqr",
+      "openexr",
+      "ghostscript",
+      "webp",
+      "openjpeg",
+      "fftw",
+      "pango",
+      "perl"
+    ],
+    "recommended_dependencies": [
+      "jpeg",
+      "libpng",
+      "libtiff",
+      "freetype"
+    ],
+    "optional_dependencies": [
+      "fontconfig",
+      "little-cms",
+      "little-cms2",
+      "libwmf",
+      "librsvg",
+      "liblqr",
+      "openexr",
+      "ghostscript",
+      "webp",
+      "openjpeg",
+      "fftw",
+      "pango",
+      "perl"
+    ],
+    "build_dependencies": [
+      "pkg-config"
+    ],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [
+      {
+        "name": "x11",
+        "cask": "xquartz",
+        "download": "https://xquartz.macosforge.org"
+      }
+    ],
+    "options": [
+      {
+        "option": "--with-fftw",
+        "description": "Compile with FFTW support"
+      },
+      {
+        "option": "--with-hdri",
+        "description": "Compile with HDRI support"
+      },
+      {
+        "option": "--with-opencl",
+        "description": "Compile with OpenCL support"
+      },
+      {
+        "option": "--with-openmp",
+        "description": "Compile with OpenMP support"
+      },
+      {
+        "option": "--with-perl",
+        "description": "Compile with PerlMagick"
+      },
+      {
+        "option": "--without-magick-plus-plus",
+        "description": "disable build/install of Magick++"
+      },
+      {
+        "option": "--without-modules",
+        "description": "Disable support for dynamically loadable modules"
+      },
+      {
+        "option": "--without-threads",
+        "description": "Disable threads support"
+      },
+      {
+        "option": "--with-zero-configuration",
+        "description": "Disables depending on XML configuration files"
+      },
+      {
+        "option": "--without-jpeg",
+        "description": "Build without jpeg support"
+      },
+      {
+        "option": "--without-libpng",
+        "description": "Build without libpng support"
+      },
+      {
+        "option": "--without-libtiff",
+        "description": "Build without libtiff support"
+      },
+      {
+        "option": "--without-freetype",
+        "description": "Build without freetype support"
+      },
+      {
+        "option": "--with-x11",
+        "description": "Build with x11 support"
+      },
+      {
+        "option": "--with-fontconfig",
+        "description": "Build with fontconfig support"
+      },
+      {
+        "option": "--with-little-cms",
+        "description": "Build with little-cms support"
+      },
+      {
+        "option": "--with-little-cms2",
+        "description": "Build with little-cms2 support"
+      },
+      {
+        "option": "--with-libwmf",
+        "description": "Build with libwmf support"
+      },
+      {
+        "option": "--with-librsvg",
+        "description": "Build with librsvg support"
+      },
+      {
+        "option": "--with-liblqr",
+        "description": "Build with liblqr support"
+      },
+      {
+        "option": "--with-openexr",
+        "description": "Build with openexr support"
+      },
+      {
+        "option": "--with-ghostscript",
+        "description": "Build with ghostscript support"
+      },
+      {
+        "option": "--with-webp",
+        "description": "Build with webp support"
+      },
+      {
+        "option": "--with-openjpeg",
+        "description": "Build with openjpeg support"
+      },
+      {
+        "option": "--with-pango",
+        "description": "Build with pango support"
+      }
+    ],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": "/usr/local/Cellar",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/imagemagick-7.0.7-25.high_sierra.bottle.tar.gz",
+            "sha256": "428604148b0f6d3d11d33f3a6fbde37cd8babb6e20fb0c89a9aa96bde9494624"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/imagemagick-7.0.7-25.sierra.bottle.tar.gz",
+            "sha256": "b80f639082f2c6598ba5a34d1699cc189481e590b2e34e67135e21d37c3b6418"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/imagemagick-7.0.7-25.el_capitan.bottle.tar.gz",
+            "sha256": "3de02b4553ec8e05e75c0e4c23d1c78096acf7e47e90e4ff5828c595d5433277"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "jpeg",
+    "full_name": "jpeg",
+    "desc": "Image manipulation library",
+    "homepage": "http://www.ijg.org",
+    "oldname": null,
+    "aliases": [
+      "libjpeg",
+      "libjpg"
+    ],
+    "versions": {
+      "stable": "9c",
+      "bottle": true,
+      "devel": null,
+      "head": null
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "9b",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [],
+        "installed_as_dependency": true,
+        "installed_on_request": false
+      }
+    ],
+    "linked_keg": "9b",
+    "pinned": false,
+    "outdated": true,
+    "keg_only": false,
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/jpeg-9c.high_sierra.bottle.tar.gz",
+            "sha256": "178200fd8aa50d5db22c5faa4ca403652d2bf912616c34dfbc6b035a456c2fc6"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/jpeg-9c.sierra.bottle.tar.gz",
+            "sha256": "8ecc3407d188472a7f775bb44314fff40f0e3b17a83da1666f3fa306d8fffeec"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/jpeg-9c.el_capitan.bottle.tar.gz",
+            "sha256": "931236302e58c53a9728dde5cb93a896b8a39b16d1f195c85381da04ea17c407"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "libpng",
+    "full_name": "libpng",
+    "desc": "Library for manipulating PNG images",
+    "homepage": "http://www.libpng.org/pub/png/libpng.html",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "1.6.34",
+      "bottle": true,
+      "devel": null,
+      "head": "HEAD"
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "1.6.32",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [],
+        "installed_as_dependency": true,
+        "installed_on_request": false
+      },
+      {
+        "version": "1.6.34",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [],
+        "installed_as_dependency": true,
+        "installed_on_request": false
+      }
+    ],
+    "linked_keg": "1.6.34",
+    "pinned": false,
+    "outdated": false,
+    "keg_only": false,
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/libpng-1.6.34.high_sierra.bottle.tar.gz",
+            "sha256": "d38a64089526ecc1413acbc22373821fd181442b80ffccfd8322a5724dc09759"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/libpng-1.6.34.sierra.bottle.tar.gz",
+            "sha256": "d587603b3079fb7ad5cecdd451ee7fdf88f80a8b88f457ed199270d85753208c"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/libpng-1.6.34.el_capitan.bottle.tar.gz",
+            "sha256": "0c17ca28357c801a0fb81667ba69c1ed820d0348ca7728766ea16e3bd9b0ff19"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "libtiff",
+    "full_name": "libtiff",
+    "desc": "TIFF library and utilities",
+    "homepage": "http://libtiff.maptools.org/",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "4.0.9",
+      "bottle": true,
+      "devel": null,
+      "head": null
+    },
+    "revision": 2,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "4.0.8_4",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [
+          {
+            "full_name": "jpeg",
+            "version": "9b"
+          }
+        ],
+        "installed_as_dependency": true,
+        "installed_on_request": false
+      },
+      {
+        "version": "4.0.9_1",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [
+          {
+            "full_name": "jpeg",
+            "version": "9b"
+          }
+        ],
+        "installed_as_dependency": true,
+        "installed_on_request": false
+      }
+    ],
+    "linked_keg": "4.0.9_1",
+    "pinned": false,
+    "outdated": true,
+    "keg_only": false,
+    "dependencies": [
+      "jpeg",
+      "xz"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [
+      "xz"
+    ],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [
+      {
+        "option": "--with-xz",
+        "description": "Include support for LZMA compression"
+      }
+    ],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/libtiff-4.0.9_2.high_sierra.bottle.tar.gz",
+            "sha256": "b25a0893acdffc8fcbb1f9d0a2f1ef04c62f15168689fc64842cd7a36884d179"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/libtiff-4.0.9_2.sierra.bottle.tar.gz",
+            "sha256": "4fbaa643a091abe7e6744ff8b04dcd94d35b559874dcdc9d733b10c41666c78a"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/libtiff-4.0.9_2.el_capitan.bottle.tar.gz",
+            "sha256": "fdfeb67c92d2cb64628ba15c3ded9d840b90b5627e06e0864536fd66ea9d15f3"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "libtool",
+    "full_name": "libtool",
+    "desc": "Generic library support script",
+    "homepage": "https://www.gnu.org/software/libtool/",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "2.4.6",
+      "bottle": true,
+      "devel": null,
+      "head": null
+    },
+    "revision": 1,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "2.4.6_1",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [],
+        "installed_as_dependency": true,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": "2.4.6_1",
+    "pinned": false,
+    "outdated": false,
+    "keg_only": false,
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": "In order to prevent conflicts with Apple's own libtool we have prepended a \"g\"\nso, you have instead: glibtool and glibtoolize.\n",
+    "requirements": [],
+    "options": [],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/libtool-2.4.6_1.high_sierra.bottle.tar.gz",
+            "sha256": "ebb50367eb2336ee317841587e24690de124fb2c3e4d346405e9b41c4e6120ae"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/libtool-2.4.6_1.sierra.bottle.tar.gz",
+            "sha256": "78a1f6c6644eae01eb5c204ef705f7e48721a0fe8ece492c10c84791061885db"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/libtool-2.4.6_1.el_capitan.bottle.tar.gz",
+            "sha256": "b7651d0a082e2f103f03ca3a5ed831e2ff5655ccc1044ac0452e4d1825475a35"
+          },
+          "yosemite": {
+            "url": "https://homebrew.bintray.com/bottles/libtool-2.4.6_1.yosemite.bottle.tar.gz",
+            "sha256": "0eb206c0f51e8ce2e3e9340b5ce3c8ecef961ae6696f676073327a7ac04e5c0b"
+          },
+          "mavericks": {
+            "url": "https://homebrew.bintray.com/bottles/libtool-2.4.6_1.mavericks.bottle.tar.gz",
+            "sha256": "2e51ef82ef2bd1ad9d921a9016b9e5d7fa82d131849e2c32a3c90daa119e2eda"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "libxml2",
+    "full_name": "libxml2",
+    "desc": "GNOME XML library",
+    "homepage": "http://xmlsoft.org/",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "2.9.7",
+      "bottle": true,
+      "devel": null,
+      "head": "HEAD"
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "2.9.7",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [],
+        "installed_as_dependency": true,
+        "installed_on_request": false
+      }
+    ],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false,
+    "keg_only": true,
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/libxml2-2.9.7.high_sierra.bottle.tar.gz",
+            "sha256": "ff9bf7d946d5413fb1f2837a187bd026f469a67b78ba6589f5b565f0133b58f2"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/libxml2-2.9.7.sierra.bottle.tar.gz",
+            "sha256": "0b9bc0fe308a22b557822d0bc254f209e33bd7b4948d7d08a14d620e1f8b6a3b"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/libxml2-2.9.7.el_capitan.bottle.tar.gz",
+            "sha256": "cdcc13eab3436e1c44dcae42396e519e4a5119552818b656a2c7a5d878b9a912"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "libxslt",
+    "full_name": "libxslt",
+    "desc": "C XSLT library for GNOME",
+    "homepage": "http://xmlsoft.org/XSLT/",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "1.1.32",
+      "bottle": true,
+      "devel": null,
+      "head": "HEAD"
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "1.1.32",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [
+          {
+            "full_name": "libxml2",
+            "version": "2.9.7"
+          }
+        ],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false,
+    "keg_only": true,
+    "dependencies": [
+      "libxml2"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": "To allow the nokogiri gem to link against this libxslt run:\n  gem install nokogiri -- --with-xslt-dir=/usr/local/opt/libxslt\n",
+    "requirements": [],
+    "options": [],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": "/usr/local/Cellar",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/libxslt-1.1.32.high_sierra.bottle.tar.gz",
+            "sha256": "502430d08fb7c8d0462ca5421b66caee4d9b8e39f3c7460c2bfca91be37091f9"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/libxslt-1.1.32.sierra.bottle.tar.gz",
+            "sha256": "5d68588f3afbdd93022aeaf81b9c6403c0c6b8aac24e5ba25a195c5ec5bad7e5"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/libxslt-1.1.32.el_capitan.bottle.tar.gz",
+            "sha256": "66854da0ffbb83f60863c23b985e5522037db4957aca70e2b49346a243a30991"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "libyaml",
+    "full_name": "libyaml",
+    "desc": "YAML Parser",
+    "homepage": "https://pyyaml.org/wiki/LibYAML",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "0.1.7",
+      "bottle": true,
+      "devel": null,
+      "head": null
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "0.1.7",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": "0.1.7",
+    "pinned": false,
+    "outdated": false,
+    "keg_only": false,
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/libyaml-0.1.7.high_sierra.bottle.tar.gz",
+            "sha256": "1b44e5e2bc63def5c491b74d6a3538913690c126e071d95081d5ec06d436db48"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/libyaml-0.1.7.sierra.bottle.tar.gz",
+            "sha256": "697f644d61983bd75f1ff5e7d4cccce26cc9a81cb8c78c066931dfc7c0dc94ba"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/libyaml-0.1.7.el_capitan.bottle.tar.gz",
+            "sha256": "ad9d3bee24a05281ecccd88dba5ac246cf27b99f32161b3572c109993c75238e"
+          },
+          "yosemite": {
+            "url": "https://homebrew.bintray.com/bottles/libyaml-0.1.7.yosemite.bottle.tar.gz",
+            "sha256": "3a7788655c3c8f3b7ad73521928277ca5433789e134f437534702145171b1104"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "mysql",
+    "full_name": "mysql",
+    "desc": "Open source relational database management system",
+    "homepage": "https://dev.mysql.com/doc/refman/5.7/en/",
+    "oldname": null,
+    "aliases": [
+      "mysql@5.7"
+    ],
+    "versions": {
+      "stable": "5.7.21",
+      "bottle": true,
+      "devel": "8.0.4-rc",
+      "head": null
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "5.7.19",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [
+          {
+            "full_name": "openssl",
+            "version": "1.0.2l"
+          }
+        ],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": "5.7.19",
+    "pinned": false,
+    "outdated": true,
+    "keg_only": false,
+    "dependencies": [
+      "cmake",
+      "openssl"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [
+      "cmake"
+    ],
+    "conflicts_with": [
+      "mysql-cluster",
+      "mariadb",
+      "percona-server",
+      "mysql-connector-c",
+      "mariadb-connector-c"
+    ],
+    "caveats": "We've installed your MySQL database without a root password. To secure it run:\n    mysql_secure_installation\n\nMySQL is configured to only allow connections from localhost by default\n\nTo connect run:\n    mysql -uroot\n",
+    "requirements": [
+      {
+        "name": "macos",
+        "cask": null,
+        "download": null
+      }
+    ],
+    "options": [
+      {
+        "option": "--with-debug",
+        "description": "Build with debug support"
+      },
+      {
+        "option": "--with-embedded",
+        "description": "Build the embedded server"
+      },
+      {
+        "option": "--with-local-infile",
+        "description": "Build with local infile loading support"
+      },
+      {
+        "option": "--with-memcached",
+        "description": "Build with InnoDB Memcached plugin"
+      },
+      {
+        "option": "--with-test",
+        "description": "Build with unit tests"
+      }
+    ],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": "/usr/local/Cellar",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/mysql-5.7.21.high_sierra.bottle.tar.gz",
+            "sha256": "a7c26e2b52bb4efa8948c808270baabd9a77b7d88b7c66367497f6a4aa1b5954"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/mysql-5.7.21.sierra.bottle.tar.gz",
+            "sha256": "54954ee3932c803edf8dcbcf9b9d1eb6efca440803874715c84bcf8ae57fe3e5"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/mysql-5.7.21.el_capitan.bottle.tar.gz",
+            "sha256": "8fe03949331ab255c0b26e3bf88a311cf6f9f5f2de46ef01798d696d2b500652"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "node",
+    "full_name": "node",
+    "desc": "Platform built on V8 to build network applications",
+    "homepage": "https://nodejs.org/",
+    "oldname": null,
+    "aliases": [
+      "node@9",
+      "nodejs",
+      "node.js",
+      "npm"
+    ],
+    "versions": {
+      "stable": "9.8.0",
+      "bottle": true,
+      "devel": null,
+      "head": "HEAD"
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "8.6.0",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [
+          {
+            "full_name": "icu4c",
+            "version": "59.1"
+          }
+        ],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      },
+      {
+        "version": "9.8.0",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [
+          {
+            "full_name": "icu4c",
+            "version": "60.2"
+          }
+        ],
+        "installed_as_dependency": true,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": "9.8.0",
+    "pinned": false,
+    "outdated": false,
+    "keg_only": false,
+    "dependencies": [
+      "pkg-config",
+      "icu4c",
+      "openssl"
+    ],
+    "recommended_dependencies": [
+      "icu4c"
+    ],
+    "optional_dependencies": [
+      "openssl"
+    ],
+    "build_dependencies": [
+      "pkg-config"
+    ],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [
+      {
+        "option": "--with-debug",
+        "description": "Build with debugger hooks"
+      },
+      {
+        "option": "--with-openssl",
+        "description": "Build against Homebrew's OpenSSL instead of the bundled OpenSSL"
+      },
+      {
+        "option": "--without-npm",
+        "description": "npm will not be installed"
+      },
+      {
+        "option": "--without-completion",
+        "description": "npm bash completion will not be installed"
+      },
+      {
+        "option": "--without-icu4c",
+        "description": "Build with small-icu (English only) instead of system-icu (all locales)"
+      }
+    ],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": "/usr/local/Cellar",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/node-9.8.0.high_sierra.bottle.tar.gz",
+            "sha256": "30bb35f2f6a6d7cde6194164549b87e63deb1fffa2e750d57a510cb5262db58f"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/node-9.8.0.sierra.bottle.tar.gz",
+            "sha256": "2baa6fa3c25d4d5c756be9be985f14e12eb954d4812aca4794be256e4f23d3c3"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/node-9.8.0.el_capitan.bottle.tar.gz",
+            "sha256": "8e8fe430186e531e8753669ebd11dbf4da6cea7ca38fbcb3cc46fcffd4a3d9b0"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "openmotif",
+    "full_name": "openmotif",
+    "desc": "LGPL release of the Motif toolkit",
+    "homepage": "https://motif.ics.com/motif",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "2.3.8",
+      "bottle": true,
+      "devel": null,
+      "head": null
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "2.3.7",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [
+          {
+            "full_name": "libpng",
+            "version": "1.6.32"
+          },
+          {
+            "full_name": "freetype",
+            "version": "2.8"
+          },
+          {
+            "full_name": "fontconfig",
+            "version": "2.12.5"
+          }
+        ],
+        "installed_as_dependency": true,
+        "installed_on_request": false
+      }
+    ],
+    "linked_keg": "2.3.7",
+    "pinned": false,
+    "outdated": true,
+    "keg_only": false,
+    "dependencies": [
+      "pkg-config",
+      "fontconfig",
+      "freetype",
+      "jpeg",
+      "libpng"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [
+      "pkg-config"
+    ],
+    "conflicts_with": [
+      "lesstif"
+    ],
+    "caveats": null,
+    "requirements": [
+      {
+        "name": "x11",
+        "cask": "xquartz",
+        "download": "https://xquartz.macosforge.org"
+      }
+    ],
+    "options": [],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": "/usr/local/Cellar",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/openmotif-2.3.8.high_sierra.bottle.tar.gz",
+            "sha256": "ca0c7a96b098ed5efc2dace2cb1b9bc2447c8f1cf0780e882bfee691160466e0"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/openmotif-2.3.8.sierra.bottle.tar.gz",
+            "sha256": "21120a7b3aab57d5660c480ab5f1924cbfb31e8625674bf02704971f103616f9"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/openmotif-2.3.8.el_capitan.bottle.tar.gz",
+            "sha256": "bef02966fb2d72ac23235c8038cdf864cefe47d1cb905fac08a9194d7c9ed554"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "openssl",
+    "full_name": "openssl",
+    "desc": "SSL/TLS cryptography library",
+    "homepage": "https://openssl.org/",
+    "oldname": null,
+    "aliases": [
+      "openssl@1.0"
+    ],
+    "versions": {
+      "stable": "1.0.2n",
+      "bottle": true,
+      "devel": null,
+      "head": null
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "1.0.2l",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [],
+        "installed_as_dependency": true,
+        "installed_on_request": false
+      },
+      {
+        "version": "1.0.2n",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [],
+        "installed_as_dependency": true,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false,
+    "keg_only": true,
+    "dependencies": [
+      "makedepend"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [
+      "makedepend"
+    ],
+    "conflicts_with": [],
+    "caveats": "A CA file has been bootstrapped using certificates from the SystemRoots\nkeychain. To add additional certificates (e.g. the certificates added in\nthe System keychain), place .pem files in\n  /usr/local/etc/openssl/certs\n\nand run\n  /usr/local/opt/openssl/bin/c_rehash\n",
+    "requirements": [],
+    "options": [
+      {
+        "option": "--without-test",
+        "description": "Skip build-time tests (not recommended)"
+      }
+    ],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": "/usr/local/Cellar",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/openssl-1.0.2n.high_sierra.bottle.tar.gz",
+            "sha256": "6d3f21c1f60c5fd77df43eb470fbe753ab030b565c9360ebb7335377cb13e047"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/openssl-1.0.2n.sierra.bottle.tar.gz",
+            "sha256": "a2446c29a356d0348380ce9f32120c6fe5e39d2a2dd01b076540e13279db32e7"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/openssl-1.0.2n.el_capitan.bottle.tar.gz",
+            "sha256": "fa3baf756b1f1ee919675137284dde4ed45b5e5109f0c351f65ee811db6c7d43"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "openssl@1.1",
+    "full_name": "openssl@1.1",
+    "desc": "Cryptography and SSL/TLS Toolkit",
+    "homepage": "https://openssl.org/",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "1.1.0g",
+      "bottle": true,
+      "devel": "1.1.1-pre2",
+      "head": null
+    },
+    "revision": 1,
+    "version_scheme": 1,
+    "installed": [
+      {
+        "version": "1.1.0f",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [],
+        "installed_as_dependency": true,
+        "installed_on_request": false
+      }
+    ],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": true,
+    "keg_only": true,
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": "A CA file has been bootstrapped using certificates from the system\nkeychain. To add additional certificates, place .pem files in\n  /usr/local/etc/openssl@1.1/certs\n\nand run\n  /usr/local/opt/openssl@1.1/bin/c_rehash\n",
+    "requirements": [],
+    "options": [
+      {
+        "option": "--without-test",
+        "description": "Skip build-time tests (not recommended)"
+      }
+    ],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": "/usr/local/Cellar",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/openssl@1.1-1.1.0g_1.high_sierra.bottle.tar.gz",
+            "sha256": "6c6b3d283398a443549a7f3df072c4fb0b6053cef4c99245149f44c01e977284"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/openssl@1.1-1.1.0g_1.sierra.bottle.tar.gz",
+            "sha256": "b0d78618e300fd5fceb5bf98001d41175bb8dcfdc1fc9239ecfa8838dc7e95c1"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/openssl@1.1-1.1.0g_1.el_capitan.bottle.tar.gz",
+            "sha256": "54fda601f3bce5881e6b834966eb5f04090d5ed6b150d2efc7ea4e26de6446b7"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "pcre2",
+    "full_name": "pcre2",
+    "desc": "Perl compatible regular expressions library with a new API",
+    "homepage": "https://www.pcre.org/",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "10.30",
+      "bottle": true,
+      "devel": null,
+      "head": "HEAD"
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "10.30",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [],
+        "installed_as_dependency": true,
+        "installed_on_request": false
+      }
+    ],
+    "linked_keg": "10.30",
+    "pinned": false,
+    "outdated": false,
+    "keg_only": false,
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/pcre2-10.30.high_sierra.bottle.tar.gz",
+            "sha256": "018f7eba7db9d2807e624b8c3e243d369714a6eb84f498917c4f4988a0fa19b0"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/pcre2-10.30.sierra.bottle.tar.gz",
+            "sha256": "1ff0a7fa5c45bebb4c3ea138a5cea73a83a7663ed9bcf2636bb9177af6dee9e9"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/pcre2-10.30.el_capitan.bottle.tar.gz",
+            "sha256": "15b40ba0f293ebea4a0108db7436a301523bac14e16997d20acd778e94bb3545"
+          },
+          "yosemite": {
+            "url": "https://homebrew.bintray.com/bottles/pcre2-10.30.yosemite.bottle.tar.gz",
+            "sha256": "0ec2d3f9b5e01424bf13a06a4e55894ed708eee2015fa43ce0755953c5afd885"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "phantomjs",
+    "full_name": "phantomjs",
+    "desc": "Headless WebKit scriptable with a JavaScript API",
+    "homepage": "http://phantomjs.org/",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "2.1.1",
+      "bottle": true,
+      "devel": null,
+      "head": null
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "2.1.1",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [
+          {
+            "full_name": "openssl",
+            "version": "1.0.2l"
+          }
+        ],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": "2.1.1",
+    "pinned": false,
+    "outdated": false,
+    "keg_only": false,
+    "dependencies": [
+      "openssl"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [
+      {
+        "name": "macos",
+        "cask": null,
+        "download": null
+      },
+      {
+        "name": "xcode",
+        "cask": null,
+        "download": null
+      }
+    ],
+    "options": [],
+    "bottle": {
+      "stable": {
+        "rebuild": 1,
+        "cellar": ":any",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/phantomjs-2.1.1.high_sierra.bottle.1.tar.gz",
+            "sha256": "0634bc067a6e257d15e57bc65d0c1660fce797c005ab83990300d4b177583ae6"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/phantomjs-2.1.1.sierra.bottle.1.tar.gz",
+            "sha256": "7833bb1de72bd88057d2260a9021ce4ec0d5f2925273d537c69549d8e30ebc6d"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/phantomjs-2.1.1.el_capitan.bottle.1.tar.gz",
+            "sha256": "370e6f729ac20091c408dc5a1be14361b861bef78f1a52efb201e27e7440cfa4"
+          },
+          "yosemite": {
+            "url": "https://homebrew.bintray.com/bottles/phantomjs-2.1.1.yosemite.bottle.1.tar.gz",
+            "sha256": "ec65660b5c4097886d52fe0b4928aaefd6d09fb0e6ab707b1fa4d762acf873e1"
+          },
+          "mavericks": {
+            "url": "https://homebrew.bintray.com/bottles/phantomjs-2.1.1.mavericks.bottle.1.tar.gz",
+            "sha256": "d837e04d137ae8ddc8eb807b7ca5a08a0fccdfd513f4fdd4f1d610ce8abc0874"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "pkg-config",
+    "full_name": "pkg-config",
+    "desc": "Manage compile and link flags for libraries",
+    "homepage": "https://freedesktop.org/wiki/Software/pkg-config/",
+    "oldname": null,
+    "aliases": [
+      "pkgconfig"
+    ],
+    "versions": {
+      "stable": "0.29.2",
+      "bottle": true,
+      "devel": null,
+      "head": null
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "0.29.2",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [],
+        "installed_as_dependency": true,
+        "installed_on_request": false
+      }
+    ],
+    "linked_keg": "0.29.2",
+    "pinned": false,
+    "outdated": false,
+    "keg_only": false,
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": "/usr/local/Cellar",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/pkg-config-0.29.2.high_sierra.bottle.tar.gz",
+            "sha256": "f1b29fb5388dccab0fcaf665ab43d308ee51816b24262417bf83a686b6e308ae"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/pkg-config-0.29.2.sierra.bottle.tar.gz",
+            "sha256": "8eb723bfc03cd468d779d54d015d47d2e8ab1dd4d35e595ab4abaca8833b3277"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/pkg-config-0.29.2.el_capitan.bottle.tar.gz",
+            "sha256": "93f044f166bcbd84db14133ee4f56104031c65409cfd2801c7ac0d182936dc78"
+          },
+          "yosemite": {
+            "url": "https://homebrew.bintray.com/bottles/pkg-config-0.29.2.yosemite.bottle.tar.gz",
+            "sha256": "d9ccc19f1a55919408a1b27260b0404aa36dc6782a4a5964e6fd8409abf3b830"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "postgresql",
+    "full_name": "postgresql",
+    "desc": "Object-relational database system",
+    "homepage": "https://www.postgresql.org/",
+    "oldname": null,
+    "aliases": [
+      "postgres",
+      "postgresql@10"
+    ],
+    "versions": {
+      "stable": "10.3",
+      "bottle": true,
+      "devel": null,
+      "head": "HEAD"
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "9.6.5",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [
+          {
+            "full_name": "openssl",
+            "version": "1.0.2l"
+          },
+          {
+            "full_name": "readline",
+            "version": "7.0.3"
+          }
+        ],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": "9.6.5",
+    "pinned": false,
+    "outdated": true,
+    "keg_only": false,
+    "dependencies": [
+      "openssl",
+      "readline",
+      "python",
+      "python@2"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [
+      "python",
+      "python@2"
+    ],
+    "build_dependencies": [],
+    "conflicts_with": [
+      "postgres-xc"
+    ],
+    "caveats": "To migrate existing data from a previous major version of PostgreSQL run:\n  brew postgresql-upgrade-database\n",
+    "requirements": [],
+    "options": [
+      {
+        "option": "--without-perl",
+        "description": "Build without Perl support"
+      },
+      {
+        "option": "--without-tcl",
+        "description": "Build without Tcl support"
+      },
+      {
+        "option": "--with-dtrace",
+        "description": "Build with DTrace support"
+      },
+      {
+        "option": "--with-python",
+        "description": "Enable PL/Python3 (incompatible with --with-python@2)"
+      },
+      {
+        "option": "--with-python@2",
+        "description": "Enable PL/Python2"
+      }
+    ],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": "/usr/local/Cellar",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/postgresql-10.3.high_sierra.bottle.tar.gz",
+            "sha256": "632a988ae9a6b45acd3fca3f05af7dbec02e01fa91814ff8ba238cc20d1a7f38"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/postgresql-10.3.sierra.bottle.tar.gz",
+            "sha256": "c5412eb34006856a6f0aca2ca2c69e2b8da706f1c6a6aae200aa81d0cda23207"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/postgresql-10.3.el_capitan.bottle.tar.gz",
+            "sha256": "0581e9efe089864abbcc938f70a5175ff5595ffd701062bafec0be041ba56258"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "pstree",
+    "full_name": "pstree",
+    "desc": "Show ps output as a tree",
+    "homepage": "http://www.thp.uni-duisburg.de/pstree/",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "2.39",
+      "bottle": true,
+      "devel": null,
+      "head": null
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "2.39",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": "2.39",
+    "pinned": false,
+    "outdated": false,
+    "keg_only": false,
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [],
+    "bottle": {
+      "stable": {
+        "rebuild": 2,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/pstree-2.39.high_sierra.bottle.2.tar.gz",
+            "sha256": "426d5701e835bc1f9313c3b7cd630aa0f2b279ad5f95406bd73f50d174e8eaf1"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/pstree-2.39.sierra.bottle.2.tar.gz",
+            "sha256": "063d2498a346002265c44bf9ad237ae47fd9923a10dd529575640d7d63bef2fa"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/pstree-2.39.el_capitan.bottle.2.tar.gz",
+            "sha256": "624458274db8e826c170121061ad25547c5a245788c8108bd2bf0af4a3678dea"
+          },
+          "yosemite": {
+            "url": "https://homebrew.bintray.com/bottles/pstree-2.39.yosemite.bottle.2.tar.gz",
+            "sha256": "127b605bf4b20cbddf63f875bd15f78ad5fc31eaebb57d9ce2051a3b856a8bd5"
+          },
+          "mavericks": {
+            "url": "https://homebrew.bintray.com/bottles/pstree-2.39.mavericks.bottle.2.tar.gz",
+            "sha256": "2334d959beae2171fe10f6781a060eab40d57b841aa1905ead0b0936fb4145ef"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "rbenv",
+    "full_name": "rbenv",
+    "desc": "Ruby version manager",
+    "homepage": "https://github.com/rbenv/rbenv#readme",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "1.1.1",
+      "bottle": true,
+      "devel": null,
+      "head": "HEAD"
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "1.1.1",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [
+          {
+            "full_name": "ruby-build",
+            "version": "20170914"
+          }
+        ],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": "1.1.1",
+    "pinned": false,
+    "outdated": false,
+    "keg_only": false,
+    "dependencies": [
+      "ruby-build"
+    ],
+    "recommended_dependencies": [
+      "ruby-build"
+    ],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [
+      {
+        "option": "--without-ruby-build",
+        "description": "Build without ruby-build support"
+      }
+    ],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/rbenv-1.1.1.high_sierra.bottle.tar.gz",
+            "sha256": "ffafe9cbf0f10545e0c7db8a5ea0ed3056226441391911d2992b2373de94afe3"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/rbenv-1.1.1.sierra.bottle.tar.gz",
+            "sha256": "a99c9b4ba77938ce03b8e06e0e4d7670c611214b07b78d2b5e1bc9a7571f9186"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/rbenv-1.1.1.el_capitan.bottle.tar.gz",
+            "sha256": "9d1a7da30fb133b43b243e562167ffdde6c125f054c3fde7a866a0b15173f269"
+          },
+          "yosemite": {
+            "url": "https://homebrew.bintray.com/bottles/rbenv-1.1.1.yosemite.bottle.tar.gz",
+            "sha256": "e3e0e0b32a1bb337178d915a91ac7f552153cbf351973f9ef1692d9644824f61"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "readline",
+    "full_name": "readline",
+    "desc": "Library for command-line editing",
+    "homepage": "https://tiswww.case.edu/php/chet/readline/rltop.html",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "7.0.3",
+      "bottle": true,
+      "devel": null,
+      "head": null
+    },
+    "revision": 1,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "7.0.3_1",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [],
+        "installed_as_dependency": true,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false,
+    "keg_only": true,
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/readline-7.0.3_1.high_sierra.bottle.tar.gz",
+            "sha256": "45322d69fba127fe9d5c8d1d2fe8b57e0a657b0ebc0a8143cc47118243828dfd"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/readline-7.0.3_1.sierra.bottle.tar.gz",
+            "sha256": "af7886c963fe3e9f58c45d679a64b278f4df7b172bbd978cf42658a7fd7b4a2a"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/readline-7.0.3_1.el_capitan.bottle.tar.gz",
+            "sha256": "86766a343a07e08c52e7e87e64a12d3aa34bf71ba248fc779a2c5b0664797ba9"
+          },
+          "yosemite": {
+            "url": "https://homebrew.bintray.com/bottles/readline-7.0.3_1.yosemite.bottle.tar.gz",
+            "sha256": "11589e87c4860e414fe5a4b3481d20e47258f41a91a7490a5c88e1a57d5e1d18"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "ruby-build",
+    "full_name": "ruby-build",
+    "desc": "Install various Ruby versions and implementations",
+    "homepage": "https://github.com/rbenv/ruby-build",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "20180224",
+      "bottle": false,
+      "devel": null,
+      "head": "HEAD"
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "20170914",
+        "used_options": [],
+        "built_as_bottle": false,
+        "poured_from_bottle": false,
+        "runtime_dependencies": [
+          {
+            "full_name": "autoconf",
+            "version": "2.69"
+          },
+          {
+            "full_name": "pkg-config",
+            "version": "0.29.2"
+          },
+          {
+            "full_name": "openssl",
+            "version": "1.0.2n"
+          }
+        ],
+        "installed_as_dependency": true,
+        "installed_on_request": false
+      }
+    ],
+    "linked_keg": "20170914",
+    "pinned": false,
+    "outdated": true,
+    "keg_only": false,
+    "dependencies": [
+      "autoconf",
+      "pkg-config",
+      "openssl"
+    ],
+    "recommended_dependencies": [
+      "autoconf",
+      "pkg-config",
+      "openssl"
+    ],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [
+      {
+        "option": "--without-autoconf",
+        "description": "Build without autoconf support"
+      },
+      {
+        "option": "--without-pkg-config",
+        "description": "Build without pkg-config support"
+      },
+      {
+        "option": "--without-openssl",
+        "description": "Build without openssl support"
+      }
+    ],
+    "bottle": {}
+  },
+  {
+    "name": "telnet",
+    "full_name": "telnet",
+    "desc": "User interface to the TELNET protocol (built from macOS Sierra sources)",
+    "homepage": "https://opensource.apple.com/",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "54.50.1",
+      "bottle": true,
+      "devel": null,
+      "head": null
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "54.50.1",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": "54.50.1",
+    "pinned": false,
+    "outdated": false,
+    "keg_only": false,
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [
+      "inetutils"
+    ],
+    "caveats": null,
+    "requirements": [
+      {
+        "name": "xcode",
+        "cask": null,
+        "download": null
+      }
+    ],
+    "options": [],
+    "bottle": {
+      "stable": {
+        "rebuild": 1,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/telnet-54.50.1.high_sierra.bottle.1.tar.gz",
+            "sha256": "f68d8152cca7ae73a3c598d55d58083ef4795f1ace88794ea949baa21a75c975"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/telnet-54.50.1.sierra.bottle.1.tar.gz",
+            "sha256": "62d5a07da6030b6006f16572ad3b1d17aee0a09d03c8690ffaed964c6bd089ae"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/telnet-54.50.1.el_capitan.bottle.1.tar.gz",
+            "sha256": "13911a70794917c973d7cd56450f02ec376819542053a5954cb6264ca31c21f5"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "tree",
+    "full_name": "tree",
+    "desc": "Display directories as trees (with optional color/HTML output)",
+    "homepage": "http://mama.indstate.edu/users/ice/tree/",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "1.7.0",
+      "bottle": true,
+      "devel": null,
+      "head": null
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "1.7.0",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": "1.7.0",
+    "pinned": false,
+    "outdated": false,
+    "keg_only": false,
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [],
+    "bottle": {
+      "stable": {
+        "rebuild": 1,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/tree-1.7.0.high_sierra.bottle.1.tar.gz",
+            "sha256": "1a9ac89dc194918786c3175bdf439e74d16f7d27bd5fa4be7b006e5d0b077a1e"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/tree-1.7.0.sierra.bottle.1.tar.gz",
+            "sha256": "f7c8a080435445e17c254ca53b016d9012bf768851df67c3d892ba71fe98e924"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/tree-1.7.0.el_capitan.bottle.1.tar.gz",
+            "sha256": "2721bafcbe1db12e444f5025bdae81aa3c7cff6572aa7423e401baeb10a43157"
+          },
+          "yosemite": {
+            "url": "https://homebrew.bintray.com/bottles/tree-1.7.0.yosemite.bottle.1.tar.gz",
+            "sha256": "c1ad4f32c4922cbd1e37aa55b8fa6e0cc8a04c96a24f0d9e7957b50b311d854d"
+          },
+          "mavericks": {
+            "url": "https://homebrew.bintray.com/bottles/tree-1.7.0.mavericks.bottle.1.tar.gz",
+            "sha256": "0bcb8a1de3ed51295917d6dd997ea492048f90a5ee1084676171a39dbd489654"
+          },
+          "mountain_lion": {
+            "url": "https://homebrew.bintray.com/bottles/tree-1.7.0.mountain_lion.bottle.1.tar.gz",
+            "sha256": "c3bd091797c487bb1ac5586d0e524da341c6043b0298269a9ded271646274fa3"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "unixodbc",
+    "full_name": "unixodbc",
+    "desc": "ODBC 3 connectivity for UNIX",
+    "homepage": "http://www.unixodbc.org/",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "2.3.5",
+      "bottle": true,
+      "devel": null,
+      "head": null
+    },
+    "revision": 1,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "2.3.5_1",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [
+          {
+            "full_name": "libtool",
+            "version": "2.4.6"
+          }
+        ],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": "2.3.5_1",
+    "pinned": false,
+    "outdated": false,
+    "keg_only": false,
+    "dependencies": [
+      "libtool"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [
+      "virtuoso"
+    ],
+    "caveats": null,
+    "requirements": [],
+    "options": [],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": "/usr/local/Cellar",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/unixodbc-2.3.5_1.high_sierra.bottle.tar.gz",
+            "sha256": "df1bc9fd3d8f42f9c28be234ef8b088428e593ebb3cdea770eff46bbbabed3b3"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/unixodbc-2.3.5_1.sierra.bottle.tar.gz",
+            "sha256": "d3ed41256b2d4cf0e6dc827aa9a99af06db96d870cb99bfd9f89eef519381d0d"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/unixodbc-2.3.5_1.el_capitan.bottle.tar.gz",
+            "sha256": "4000a04bcd306d0ce55cacff24bc6a6e3592c20be42c0ce5ce3a9171a00cf5f2"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "wget",
+    "full_name": "wget",
+    "desc": "Internet file retriever",
+    "homepage": "https://www.gnu.org/software/wget/",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "1.19.4",
+      "bottle": true,
+      "devel": null,
+      "head": "HEAD"
+    },
+    "revision": 1,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "1.19.1_1",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [
+          {
+            "full_name": "openssl@1.1",
+            "version": "1.1.0f"
+          }
+        ],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": "1.19.1_1",
+    "pinned": false,
+    "outdated": true,
+    "keg_only": false,
+    "dependencies": [
+      "pkg-config",
+      "libidn2",
+      "openssl",
+      "pcre",
+      "libmetalink",
+      "gpgme"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [
+      "pcre",
+      "libmetalink",
+      "gpgme"
+    ],
+    "build_dependencies": [
+      "pkg-config"
+    ],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [
+      {
+        "option": "--with-debug",
+        "description": "Build with debug support"
+      },
+      {
+        "option": "--with-pcre",
+        "description": "Build with pcre support"
+      },
+      {
+        "option": "--with-libmetalink",
+        "description": "Build with libmetalink support"
+      },
+      {
+        "option": "--with-gpgme",
+        "description": "Build with gpgme support"
+      }
+    ],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": "/usr/local/Cellar",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/wget-1.19.4_1.high_sierra.bottle.tar.gz",
+            "sha256": "7989ae0ee0d212237ba31e8024189ba57a4296be67e08aeeea879d603ca66b59"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/wget-1.19.4_1.sierra.bottle.tar.gz",
+            "sha256": "e4b88af13d56bd1aadbef96abdfff0a3919da8da96acc2e7ffd3ef812232a687"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/wget-1.19.4_1.el_capitan.bottle.tar.gz",
+            "sha256": "3091698e33a73f706918967dddc3ce1d295f1ae351b5d32932cd3e9013ee5283"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "wxmac",
+    "full_name": "wxmac",
+    "desc": "Cross-platform C++ GUI toolkit (wxWidgets for macOS)",
+    "homepage": "https://www.wxwidgets.org",
+    "oldname": null,
+    "aliases": [
+      "wxwidgets"
+    ],
+    "versions": {
+      "stable": "3.0.3.1",
+      "bottle": true,
+      "devel": "3.1.1",
+      "head": "HEAD"
+    },
+    "revision": 1,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "3.0.3.1_1",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [
+          {
+            "full_name": "jpeg",
+            "version": "9b"
+          },
+          {
+            "full_name": "libpng",
+            "version": "1.6.32"
+          },
+          {
+            "full_name": "libtiff",
+            "version": "4.0.8"
+          }
+        ],
+        "installed_as_dependency": true,
+        "installed_on_request": false
+      }
+    ],
+    "linked_keg": "3.0.3.1_1",
+    "pinned": false,
+    "outdated": false,
+    "keg_only": false,
+    "dependencies": [
+      "jpeg",
+      "libpng",
+      "libtiff"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [
+      {
+        "option": "--with-stl",
+        "description": "use standard C++ classes for everything"
+      },
+      {
+        "option": "--with-static",
+        "description": "build static libraries"
+      }
+    ],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/wxmac-3.0.3.1_1.high_sierra.bottle.tar.gz",
+            "sha256": "897ef07ebe51ba7f2fb0bc54df04a68814ce4d55afe1e8808fd5c6df6a811eca"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/wxmac-3.0.3.1_1.sierra.bottle.tar.gz",
+            "sha256": "fb15ea55d8393fafa1c286485fc8c1da91b3f41d76a234d9766689cfe4635e1e"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/wxmac-3.0.3.1_1.el_capitan.bottle.tar.gz",
+            "sha256": "b26fa72e62558efa45fc89a4cc9cea74845369764e74fffa339b3f9eb6549827"
+          },
+          "yosemite": {
+            "url": "https://homebrew.bintray.com/bottles/wxmac-3.0.3.1_1.yosemite.bottle.tar.gz",
+            "sha256": "591bffb395156566ef3e55a9a8f2c193bdcde8b941d42cc6e6b41833ceeeaba2"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "xpdf",
+    "full_name": "xpdf",
+    "desc": "PDF viewer",
+    "homepage": "http://www.foolabs.com/xpdf/",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "4.00",
+      "bottle": true,
+      "devel": null,
+      "head": null
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "3.04_1",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [
+          {
+            "full_name": "libpng",
+            "version": "1.6.32"
+          },
+          {
+            "full_name": "freetype",
+            "version": "2.8.1"
+          },
+          {
+            "full_name": "fontconfig",
+            "version": "2.12.5"
+          },
+          {
+            "full_name": "openmotif",
+            "version": "2.3.7"
+          }
+        ],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": "3.04_1",
+    "pinned": false,
+    "outdated": true,
+    "keg_only": false,
+    "dependencies": [
+      "cmake",
+      "freetype",
+      "qt"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [
+      "cmake"
+    ],
+    "conflicts_with": [
+      "pdf2image",
+      "poppler"
+    ],
+    "caveats": null,
+    "requirements": [],
+    "options": [],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/xpdf-4.00.high_sierra.bottle.tar.gz",
+            "sha256": "9d27d28c52d120d30c6d2293da42a96d993171f2d68febc00c406a0e5bbe4cb9"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/xpdf-4.00.sierra.bottle.tar.gz",
+            "sha256": "e747937587f1ba1acd33b7caf1f407b1baa3951c8b31e091ea0ae6f00ccc9d79"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/xpdf-4.00.el_capitan.bottle.tar.gz",
+            "sha256": "1013c1a0224961955bed42d33a37748ac899b6f3a07f87809865974b760d59e0"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "xz",
+    "full_name": "xz",
+    "desc": "General-purpose data compression with high compression ratio",
+    "homepage": "https://tukaani.org/xz/",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "5.2.3",
+      "bottle": true,
+      "devel": null,
+      "head": null
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "5.2.3",
+        "used_options": [],
+        "built_as_bottle": true,
+        "poured_from_bottle": true,
+        "runtime_dependencies": [],
+        "installed_as_dependency": true,
+        "installed_on_request": false
+      }
+    ],
+    "linked_keg": "5.2.3",
+    "pinned": false,
+    "outdated": false,
+    "keg_only": false,
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": [],
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/usr/local",
+        "root_url": "https://homebrew.bintray.com/bottles",
+        "files": {
+          "high_sierra": {
+            "url": "https://homebrew.bintray.com/bottles/xz-5.2.3.high_sierra.bottle.tar.gz",
+            "sha256": "34f57f10e488cf405c215ceab0648c9a2d44f2361439703af3c8778734aa2ef9"
+          },
+          "sierra": {
+            "url": "https://homebrew.bintray.com/bottles/xz-5.2.3.sierra.bottle.tar.gz",
+            "sha256": "2518e5105c2b290755cda0fd5cd7f71eea4cd4741b70c48250eed1750c3a6814"
+          },
+          "el_capitan": {
+            "url": "https://homebrew.bintray.com/bottles/xz-5.2.3.el_capitan.bottle.tar.gz",
+            "sha256": "faa0f79c1776a8b5d8093f84fca4c92e1ada51957a1381d120f690be36b42819"
+          },
+          "yosemite": {
+            "url": "https://homebrew.bintray.com/bottles/xz-5.2.3.yosemite.bottle.tar.gz",
+            "sha256": "82eef73a78db1c46ed8482c357f6ad1797a62f4c9124410b362efe885082892c"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "yarn",
+    "full_name": "yarn",
+    "desc": "JavaScript package manager",
+    "homepage": "https://yarnpkg.com/",
+    "oldname": null,
+    "aliases": [],
+    "versions": {
+      "stable": "1.5.1",
+      "bottle": false,
+      "devel": null,
+      "head": null
+    },
+    "revision": 1,
+    "version_scheme": 0,
+    "installed": [
+      {
+        "version": "1.1.0",
+        "used_options": [],
+        "built_as_bottle": false,
+        "poured_from_bottle": false,
+        "runtime_dependencies": [
+          {
+            "full_name": "node",
+            "version": "8.6.0"
+          }
+        ],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      },
+      {
+        "version": "1.5.1_1",
+        "used_options": [],
+        "built_as_bottle": false,
+        "poured_from_bottle": false,
+        "runtime_dependencies": [
+          {
+            "full_name": "node",
+            "version": "9.8.0"
+          }
+        ],
+        "installed_as_dependency": false,
+        "installed_on_request": true
+      }
+    ],
+    "linked_keg": "1.5.1_1",
+    "pinned": false,
+    "outdated": false,
+    "keg_only": false,
+    "dependencies": [
+      "node"
+    ],
+    "recommended_dependencies": [
+      "node"
+    ],
+    "optional_dependencies": [],
+    "build_dependencies": [],
+    "conflicts_with": [
+      "hadoop"
+    ],
+    "caveats": null,
+    "requirements": [],
+    "options": [
+      {
+        "option": "--without-node",
+        "description": "Build without node support"
+      }
+    ],
+    "bottle": {}
+  }
+]

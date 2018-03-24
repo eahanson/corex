@@ -1,56 +1,54 @@
 defmodule Corex.CLI.Homebrew do
-  def installed?(executable) do
-    case info(executable) do
-      {:installed, _version} -> true
-      {:not_installed} -> false
+  defmodule Packages do
+    defstruct [:installed]
+  end
+
+  defmodule Services do
+    defstruct [:all]
+  end
+
+  def packages(cmd \\ &run_cmd/2) do
+    with {result, 0} <- cmd.("brew", ["info", "--json=v1", "--installed"]),
+         {:ok, decoded} <- result |> Poison.decode,
+         installed <- decoded |> Enum.map(fn package -> {package["name"], package["linked_keg"]} end) do
+      %Packages{installed: installed}
     end
   end
 
-  def version?(executable, version_prefix) do
-    case info(executable) do
-      {:installed, version} -> version |> String.starts_with?(version_prefix)
-      {:not_installed} -> false
+  def services(cmd \\ &run_cmd/2) do
+    with {result, 0} <- cmd.("brew", ["services", "list"]),
+         [_headers | lines] <- result |> String.split("\n"),
+         lists <- lines |> Enum.map(&String.split/1),
+         valid_lists <- lists |> Enum.reject(fn list -> length(list) < 2 end),
+         tuples <- valid_lists |> Enum.map(fn [name | [status | _rest]] -> {name, status} end) do
+      %Services{all: tuples}
     end
   end
 
-  def running?(service, cmd \\ &run_cmd/2) do
-    {result, status} = cmd.("brew", ["services", "list"])
+  def installed?(packages, package_name, opts \\ %{}) do
+    case packages.installed |> find_by_name(package_name) do
+      nil ->
+        false
 
-    if status == 0 do
-      [_headers | service_infos] = result |> String.split("\n")
-
-      service_info =
-        service_infos
-        |> Enum.map(&String.split/1)
-        |> Enum.reject(fn list -> length(list) < 2 end)
-        |> Enum.map(fn [name | [status | _rest]] -> {name, status} end)
-        |> Enum.find(fn {name, _} -> name == service end)
-
-      case service_info do
-        {_, "started"} -> true
-        _ -> false
-      end
+      {_name, version} ->
+        if opts[:version] do
+          version |> String.starts_with?(opts[:version])
+        else
+          true
+        end
     end
   end
 
-  defp info(executable) do
-    {result, status} = run_cmd("brew", ["info", "--json=v1", executable])
-
-    if status == 0 do
-      [parsed] = result |> decode_json()
-      version = parsed |> Map.get("installed") |> hd |> Map.get("version")
-      {:installed, version}
-    else
-      {:not_installed}
+  def running?(services, service_name) do
+    case services.all |> find_by_name(service_name) do
+      nil -> false
+      {_name, "started"} -> true
+      _ -> false
     end
   end
 
-  def decode_json(s) do
-    s
-    |> String.split("\n")
-    |> Enum.map(&Poison.decode/1)
-    |> Enum.find(fn {status, _} -> status == :ok end)
-    |> elem(1)
+  defp find_by_name(tuples, expected_name) do
+    tuples |> Enum.find(fn {name, _} -> name == expected_name end)
   end
 
   defp run_cmd(command, args) do
