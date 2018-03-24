@@ -26,3 +26,34 @@
 ## Convert eex to slime
 * Install (OS X): `brew install rbenv ruby-build` and `rbenv install` and `gem install eex2slime`
 * Run: `eex2slime [input-file]`
+
+
+# Using Corex As A Template For A New Elixir/Phoenix App
+
+## Create the project
+
+Create a new project, and set the Corex repo as a remote:
+
+    mkdir your-new-project
+    cd your-new-project
+    git init
+    git remote add corex git@github.com:eahanson/corex
+    git fetch corex
+    git reset --hard corex/master
+    git create project-name
+    git remote add origin git@github.com:[organization/project-name]
+    git push -u origin master
+    
+You can keep `corex` as a remote to pull new changes from `corex` into your project.
+    
+## Importing changes from Corex
+
+See what's changed: 
+    
+    git fetch corex
+    git log corex/master
+    
+Merge all changes from the Corex:
+
+    git merge corex/master
+        
