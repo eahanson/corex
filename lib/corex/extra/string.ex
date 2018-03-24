@@ -1,10 +1,10 @@
 defmodule Corex.Extra.String do
-  def surround(s, surrounder) do
-    surround(s, surrounder, surrounder)
+  def surround(s, prefix_and_suffix) do
+    surround(s, prefix_and_suffix, prefix_and_suffix)
   end
 
-  def surround(s, beginning, ending) do
-    beginning <> s <> ending
+  def surround(s, prefix, suffix) do
+    prefix <> s <> suffix
   end
 
   def inner_truncate(s, length) do

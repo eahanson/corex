@@ -15,7 +15,7 @@ defmodule Corex.Extra.StringTest do
       assert Extra.String.surround("abc", "12") == "12abc12"
     end
 
-    test "surrounds with beginning and ending characters" do
+    test "surrounds with prefix and suffix characters" do
       assert Extra.String.surround("abc", "12", "34") == "12abc34"
     end
   end
