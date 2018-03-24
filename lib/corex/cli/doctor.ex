@@ -16,6 +16,7 @@ defmodule Corex.CLI.Doctor do
       check_homebrew("heroku", "heroku/brew/heroku"),
       check_homebrew("postgresql"),
       check_homebrew_service("postgresql"),
+      check_file_exists("Javascript/Yarn/Brunch is set up", "assets/node_modules", "(cd assets && yarn install)")
     ]
   end
 
@@ -40,6 +41,14 @@ defmodule Corex.CLI.Doctor do
       "#{service} is running",
       fn -> Homebrew.running?(service) end,
       "brew services start #{service}"
+    }
+  end
+
+  defp check_file_exists(description, file, remedy) do
+    {
+      description,
+      fn -> File.exists?(file) end,
+      remedy
     }
   end
 
