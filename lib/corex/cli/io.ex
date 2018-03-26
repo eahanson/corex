@@ -14,4 +14,12 @@ defmodule Corex.CLI.IO do
     if details, do: "(#{details})" |> Color.write(:cyan)
     IO.puts ""
   end
+
+  def spinner(text, fun) do
+    ProgressBar.render_spinner [
+      frames: :braille,
+      text: "#{text}...",
+      done: [IO.ANSI.green, "✓", IO.ANSI.reset, " #{text}... done!"]
+    ], fun
+  end
 end

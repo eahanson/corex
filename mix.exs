@@ -52,6 +52,7 @@ defmodule Corex.Mixfile do
       {:phoenix_pubsub, "~> 1.0"},
       {:phoenix_slime, "~> 0.9.0"},
       {:postgrex, ">= 0.0.0"},
+      {:progress_bar, "~> 1.6"},
       {:table_rex, "~> 1.0"},
       {:timex, "~> 3.0"},
     ]

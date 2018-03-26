@@ -1,11 +1,11 @@
 defmodule Corex.CLI.DoctorConfig do
   import Corex.CLI.Doctor, only: [check: 2, check: 3]
 
-  alias Corex.CLI.Homebrew
+  alias Corex.CLI
 
   def checks() do
-    homebrew_packages = Homebrew.packages()
-    homebrew_services = Homebrew.services()
+    homebrew_packages = CLI.IO.spinner "Loading Homebrew packages", fn -> CLI.Homebrew.packages() end
+    homebrew_services = CLI.IO.spinner "Loading Homebrew services", fn -> CLI.Homebrew.services() end
 
     [
       phoenix_checks(homebrew_packages),
