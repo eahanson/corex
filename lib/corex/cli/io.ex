@@ -19,7 +19,7 @@ defmodule Corex.CLI.IO do
     ProgressBar.render_spinner [
       frames: :braille,
       text: "#{text}...",
-      done: [IO.ANSI.green, "✓", IO.ANSI.reset, " #{text}... done!"]
+      done: :remove
     ], fun
   end
 end
