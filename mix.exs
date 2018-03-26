@@ -45,6 +45,7 @@ defmodule Corex.Mixfile do
     [
       {:cowboy, "~> 1.0"},
       {:gettext, "~> 0.11"},
+      {:junit_formatter, git: "https://github.com/sparta-science/junit-formatter.git", only: :test},
       {:phoenix, "~> 1.3.0"},
       {:phoenix_ecto, "~> 3.2"},
       {:phoenix_html, "~> 2.10"},

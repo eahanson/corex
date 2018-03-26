@@ -17,3 +17,8 @@ config :corex, Corex.Repo,
   database: "corex_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :junit_formatter,
+  report_file: "results.xml",
+  report_dir: "_build",
+  print_report_file: true
