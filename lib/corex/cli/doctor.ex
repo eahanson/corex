@@ -1,31 +1,16 @@
 defmodule Corex.CLI.Doctor do
   alias Corex.Color
   alias Corex.CLI.Homebrew
+  alias Corex.CLI.DoctorConfig
   alias Corex.Extra
 
   def run do
-    checks() |> Enum.all?(&run_check/1)
+    DoctorConfig.checks() |> List.flatten() |> Enum.all?(&run_check/1)
   end
 
-  defp checks do
-    homebrew_packages = Homebrew.packages()
-    homebrew_services = Homebrew.services()
+  def check(_, _, opts \\ %{})
 
-    [
-      check(homebrew_packages, "elixir", version: "1.5"),
-      check(homebrew_packages, "node"),
-      check(homebrew_packages, "yarn"),
-      check(homebrew_packages, "phantomjs"),
-      check(homebrew_packages, "heroku", formula: "heroku/brew/heroku"),
-      check(homebrew_packages, "postgresql"),
-      check(homebrew_services, "postgresql"),
-      check(:file, "assets/node_modules", remedy: "(cd assets && yarn install)")
-    ]
-  end
-
-  defp check(_, _, opts \\ %{})
-
-  defp check(%Homebrew.Packages{} = packages, package, opts) do
+  def check(%Homebrew.Packages{} = packages, package, opts) do
     {
       [package, opts[:version], "is installed"] |> Extra.Enum.compact |> Enum.join(" "),
       fn -> packages |> Homebrew.installed?(package, opts) end,
@@ -33,15 +18,15 @@ defmodule Corex.CLI.Doctor do
     }
   end
 
-  defp check(:file, file, opts) do
+  def check(:file, file, opts) do
     {
-      "File/directory '#{file}' exists",
+      "file/directory '#{file}' exists",
       fn -> File.exists?(file) end,
       opts[:remedy]
     }
   end
 
-  defp check(%Homebrew.Services{} = services, service, _opts) do
+  def check(%Homebrew.Services{} = services, service, _opts) do
     {
       "#{service} is running",
       fn -> services |> Homebrew.running?(service) end,
