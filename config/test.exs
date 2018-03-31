@@ -22,3 +22,5 @@ config :junit_formatter,
   report_file: "results.xml",
   report_dir: "_build",
   print_report_file: true
+
+config :pbkdf2_elixir, rounds: 1

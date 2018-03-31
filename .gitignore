@@ -27,4 +27,5 @@ npm-debug.log
 /config/*.secret.exs
 
 .idea
+*.iml
 bin/cli

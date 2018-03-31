@@ -43,9 +43,12 @@ defmodule Corex.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:apex, "~> 1.2"},
+      {:comeonin, "~> 4.1"},
       {:cowboy, "~> 1.0"},
       {:gettext, "~> 0.11"},
       {:junit_formatter, git: "https://github.com/sparta-science/junit-formatter.git", only: :test},
+      {:pbkdf2_elixir, "~> 0.12.3"},
       {:phoenix, "~> 1.3.0"},
       {:phoenix_ecto, "~> 3.2"},
       {:phoenix_html, "~> 2.10"},

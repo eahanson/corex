@@ -17,6 +17,7 @@ defmodule Corex.DataCase do
   using do
     quote do
       alias Corex.Repo
+      alias Apex
 
       import Ecto
       import Ecto.Changeset
