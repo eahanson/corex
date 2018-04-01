@@ -1,14 +1,14 @@
 .section
   table.data-table
     thead
-      tr.data-table-title
-        th[colspan=2]
+      tr
+        th.data-table__title[colspan=2]
           .level
             .level-left
               span.level-item.title.is-4 Users
-            .level-right.buttons
-              = link "New User", to: user_path(@conn, :new), class: "button level-item"
-              = link "Other Button", to: user_path(@conn, :new), class: "button level-item"
+            .level-right.data-table__buttons
+              = link "New User", to: user_path(@conn, :new), class: "data-table__button level-item"
+              = link "Other Button", to: user_path(@conn, :new), class: "data-table__button level-item"
       tr
         th Email
         th
@@ -17,7 +17,7 @@
         tr
           td= user.email
           td
-            .buttons
-              = link "Show", to: user_path(@conn, :show, user)
-              = link "Edit", to: user_path(@conn, :edit, user)
-              = link "Delete", to: user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "is-danger"
+            .data-table__buttons
+              = link "Show", to: user_path(@conn, :show, user), class: "data-table__button"
+              = link "Edit", to: user_path(@conn, :edit, user), class: "data-table__button"
+              = link "Delete", to: user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "data-table__button--delete"

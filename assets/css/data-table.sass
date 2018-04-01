@@ -6,19 +6,25 @@ table.data-table
 
   border: $table-cell-border
 
-  .data-table-title
-    th
+  td
+    vertical-align: middle
+
+  thead
+    th.data-table__title
       text-align: center
       border-width: 0
       background-color: $table-row-hover-background-color
 
-  td
-    vertical-align: middle
+  .data-table__buttons
+    @extend .buttons
 
-  .buttons, .data-table-title-buttons
-    a
-      @extend .button
-      @extend .is-small
-      @extend .is-outlined
-      font-weight: normal
+  .data-table__button
+    @extend .button
+    @extend .is-small
+    @extend .is-outlined
+    font-weight: normal
+
+  .data-table__button--delete
+    @extend .data-table__button
+    @extend .is-danger
 
