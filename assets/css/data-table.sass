@@ -15,6 +15,24 @@ table.data-table
       border-width: 0
       background-color: $table-row-hover-background-color
 
+  .data-table__title-container
+    @extend .level
+
+  .data-table__title-left
+    @extend .level-left
+
+  .data-table__title-text
+    @extend .level-item
+    @extend .title
+    @extend .is-4
+
+  .data-table__title-right
+    @extend .level-right
+    @extend .data-table__buttons
+
+  .data-table__title-button
+    @extend .data-table__button
+
   .data-table__buttons
     @extend .buttons
 
@@ -22,6 +40,7 @@ table.data-table
     @extend .button
     @extend .is-small
     @extend .is-outlined
+    @extend .is-link
     font-weight: normal
 
   .data-table__button--delete
