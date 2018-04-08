@@ -46,6 +46,7 @@ defmodule Corex.Mixfile do
       {:apex, "~> 1.2"},
       {:comeonin, "~> 4.1"},
       {:cowboy, "~> 1.0"},
+      {:floki, "~> 0.20.1"},
       {:gettext, "~> 0.11"},
       {:junit_formatter, git: "https://github.com/sparta-science/junit-formatter.git", only: :test},
       {:pbkdf2_elixir, "~> 0.12.3"},

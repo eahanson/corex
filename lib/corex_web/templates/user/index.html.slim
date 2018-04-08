@@ -1,23 +1,2 @@
 .section
-  table.data-table
-    thead
-      tr
-        th.data-table__title[colspan=2]
-          .data-table__title-container
-            .data-table__title-left
-              span.data-table__title-text Users
-            .data-table__title-right
-              = link "New User", to: user_path(@conn, :new), class: "data-table__title-button"
-              = link "Other Button", to: user_path(@conn, :new), class: "data-table__title-button"
-      tr
-        th Email
-        th
-    tbody
-      = for user <- @users do
-        tr
-          td= user.email
-          td
-            .data-table__buttons
-              = link "Show", to: user_path(@conn, :show, user), class: "data-table__button"
-              = link "Edit", to: user_path(@conn, :edit, user), class: "data-table__button"
-              = link "Delete", to: user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "data-table__button--delete"
+  = users_table(@users, @conn)
