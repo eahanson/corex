@@ -7,8 +7,7 @@ defmodule CorexWeb.UserView do
   def users_table(users, conn) do
     DataTable.new(users, title: "Users")
     |> DataTable.table_action("New User", user_path(conn, :new))
-    |> DataTable.table_action("Other Button", user_path(conn, :new))
-    |> DataTable.column("Email", &(&1.email))
+    |> DataTable.column("Email", :email)
     |> DataTable.action("Show", &(user_path(conn, :show, &1)))
     |> DataTable.action("Edit", &(user_path(conn, :edit, &1)))
     |> DataTable.action("Delete", &(user_path(conn, :delete, &1)), :delete, &("Really delete user #{&1.email} ?"))

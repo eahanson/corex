@@ -16,8 +16,13 @@ defmodule CorexWeb.DataTableView do
       %DataTable{ actions: [], columns: [], data: data, table_actions: [], title: title }
     end
 
-    def column(%DataTable{} = data_table, title, fun) when is_function(fun) do
-      %DataTable{ data_table | columns: data_table.columns ++ [{title, fun}]}
+    def column(%DataTable{} = data_table, title, contents_fun) when is_function(contents_fun) do
+      %DataTable{ data_table | columns: data_table.columns ++ [{title, contents_fun}]}
+    end
+
+    def column(%DataTable{} = data_table, title, contents_key) when is_atom(contents_key) do
+      contents_fun = &(&1 |> Map.get(contents_key))
+      %DataTable{ data_table | columns: data_table.columns ++ [{title, contents_fun}]}
     end
 
     def column(%DataTable{} = data_table, title, contents) do

@@ -36,7 +36,8 @@ defmodule CorexWeb.DataTableViewTest do
         DataTable.new(cars, title: "Some Cars")
         |> DataTable.column("Make", fn car -> car.make end)
         |> DataTable.column("Model", &(&1.model))
-        |> DataTable.column("Color", "N/A")
+        |> DataTable.column("Color", :color)
+        |> DataTable.column("VIN", "N/A")
         |> DataTable.action("Show", fn car -> "/cars/#{car.make}/#{car.model}" end)
         |> DataTable.action("Delete", fn car -> "/cars/#{car.make}/#{car.model}" end, :delete, fn car -> "Really delete #{car.make}?" end)
         |> DataTable.table_action("New Car", "/cars/new")
@@ -52,9 +53,9 @@ defmodule CorexWeb.DataTableViewTest do
     test "renders data", %{data_table: data_table} do
       assert data_table |> table_contents("table.data-table") == [
         ["Some Cars New Car Help"],
-        ["Make", "Model", "Color", ""],
-        ["Toyota", "Corolla", "N/A", "Show Delete"],
-        ["Honda", "Civic", "N/A", "Show Delete"],
+        ["Make", "Model", "Color", "VIN", ""],
+        ["Toyota", "Corolla", "red", "N/A", "Show Delete"],
+        ["Honda", "Civic", "blue", "N/A", "Show Delete"],
       ]
     end
 

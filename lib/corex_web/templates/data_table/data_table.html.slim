@@ -19,8 +19,8 @@ table.data-table
   tbody
     = for datum <- @data_table.data do
       tr
-        = for {_title, fun} <- @data_table.columns do
-          td= fun.(datum)
+        = for {_title, contents_fun} <- @data_table.columns do
+          td= contents_fun.(datum)
         = if @data_table.actions |> length > 0 do
           td
             .data-table__buttons
