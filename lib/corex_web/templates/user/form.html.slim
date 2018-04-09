@@ -1,14 +1,27 @@
-= form_for @changeset, @action, fn f ->
-  = if @changeset.action do
-    .alert.alert-danger
-      p Oops, something went wrong! Please check the errors below.
-  .form-group
-    = label f, :email, class: "control-label"
-    = text_input f, :email, class: "form-control"
-    = error_tag f, :email
-  .form-group
-    = label f, :password, class: "control-label"
-    = password_input f, :password, class: "form-control"
-    = error_tag f, :password
-  .form-group
-    = submit "Submit", class: "btn btn-primary"
+.section
+  .columns
+    .column.is-one-third.is-offset-one-third
+      = form_for @changeset, @action, [class: "foo"], fn f ->
+        h3.title= @title
+        = if @changeset.action do
+          .notification.is-danger
+            p Error creating user
+        .field
+          = label f, :email, class: "label"
+          .control.has-icons-left
+            - classes = if f.errors |> Keyword.has_key?(:email), do: "input is-danger", else: "input"
+            = text_input f, :email, class: classes
+            span.icon.is-small.is-left
+              i.fas.fa-at
+          = error_tag f, :email
+        .field
+          = label f, :password, class: "label"
+          .control.has-icons-left
+            - classes = if f.errors |> Keyword.has_key?(:password), do: "input is-danger", else: "input"
+            = password_input f, :password, class: classes, autocomplete: "new-password"
+            span.icon.is-small.is-left
+              i.fas.fa-key
+          = error_tag f, :password
+        .field
+          .control
+            = submit "Save", class: "button is-link"
