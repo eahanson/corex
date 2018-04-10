@@ -2,6 +2,7 @@ defmodule CorexWeb.WidgetView do
   use CorexWeb, :view
 
   alias CorexWeb.DataTableView.DataTable
+  alias CorexWeb.DataTableView.Form
 
   defmodule DataTable do
     defstruct ~w{
@@ -45,12 +46,50 @@ defmodule CorexWeb.WidgetView do
     end
   end
 
+  defmodule Form do
+    defstruct ~w{
+      action
+      changeset
+      fields
+      title
+    }a
+
+    def new(changeset, action: action, title: title) do
+      %Form{action: action, changeset: changeset, fields: [], title: title}
+    end
+
+    def text_input(%Form{} = form, name, icon \\ nil) do
+      icon = case {name, icon} do
+        {:email, nil} -> "at"
+        {_, icon} -> icon
+      end
+      form |> field(%{name: name, icon: icon, input_fun: &Phoenix.HTML.Form.text_input/3, autocomplete: nil})
+    end
+
+    def password_input(%Form{} = form, name) do
+      form |> field(%{name: name, icon: "key", input_fun: &Phoenix.HTML.Form.password_input/3, autocomplete: "new-password"})
+    end
+
+    defp field(%Form{} = form, field) do
+      %Form{ form | fields: form.fields ++ [field]}
+    end
+  end
+
   def widget(%DataTable{} = data_table, conn) do
     render(
       CorexWeb.WidgetView,
       "data_table.html",
       conn: conn,
       data_table: data_table
+    )
+  end
+
+  def widget(%Form{} = form, conn) do
+    render(
+      CorexWeb.WidgetView,
+      "form.html",
+      conn: conn,
+      form: form
     )
   end
 end

@@ -1,0 +1,20 @@
+.section
+  .columns
+    .column.is-one-third.is-offset-one-third
+      = form_for @form.changeset, @form.action, fn f ->
+        h3.title= @form.title
+        = if @form.changeset.action do
+          .notification.is-danger
+            p There was an error on the form
+        = for field <- @form.fields do
+          .field
+            = label f, field.name, class: "label"
+            .control.has-icons-left
+              - classes = if f.errors |> Keyword.has_key?(field.name), do: "input is-danger", else: "input"
+              = field.input_fun.(f, field.name, class: classes, autocomplete: field.autocomplete)
+              span.icon.is-small.is-left
+                i.fas[class="fa-#{field.icon}"]
+            = error_tag f, :email
+        .field
+          .control
+            = submit "Save", class: "button is-link"

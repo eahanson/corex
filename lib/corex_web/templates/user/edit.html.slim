@@ -1,2 +1,3 @@
-= render "form.html", assigns |> Map.merge(%{action: user_path(@conn, :update, @user), title: "Edit User"})
+= user_form @changeset, @conn, action: user_path(@conn, :update, @user), title: "Edit User"
+
 

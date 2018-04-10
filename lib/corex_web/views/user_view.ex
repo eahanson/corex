@@ -3,6 +3,7 @@ defmodule CorexWeb.UserView do
 
   alias CorexWeb.WidgetView
   alias CorexWeb.WidgetView.DataTable
+  alias CorexWeb.WidgetView.Form
 
   def users_table(users, conn) do
     DataTable.new(users, title: "Users")
@@ -11,6 +12,13 @@ defmodule CorexWeb.UserView do
     |> DataTable.action("Show", &(user_path(conn, :show, &1)))
     |> DataTable.action("Edit", &(user_path(conn, :edit, &1)))
     |> DataTable.action("Delete", &(user_path(conn, :delete, &1)), :delete, &("Really delete user #{&1.email} ?"))
+    |> WidgetView.widget(conn)
+  end
+
+  def user_form(user, conn, action: action, title: title) do
+    Form.new(user, action: action, title: title)
+    |> Form.text_input(:email)
+    |> Form.password_input(:password)
     |> WidgetView.widget(conn)
   end
 end

@@ -1,29 +1,36 @@
 defmodule CorexWeb.WidgetViewTest do
   use CorexWeb.ConnCase, async: true
 
+  alias Corex.Accounts.User
+
+  alias CorexWeb.Test
   alias CorexWeb.WidgetView
   alias CorexWeb.WidgetView.DataTable
-  alias CorexWeb.Test
+  alias CorexWeb.WidgetView.Form
 
-  describe "render_data_table" do
-    defp render(data_table) do
+  describe "widget %DataTable{}" do
+    defp render(widget) do
       rendered =
-        WidgetView.widget(data_table, build_conn(:get, "/"))
+        WidgetView.widget(widget, build_conn(:get, "/"))
         |> Phoenix.HTML.safe_to_string()
 
       "#{rendered}\n"
     end
 
-    defp text(data_table, css_query) do
-      data_table |> render() |> Test.HTML.text(css_query)
+    defp text(widget, css_query) do
+      widget |> render() |> Test.HTML.text(css_query)
     end
 
-    defp table_contents(data_table, css_query) do
-      data_table |> render() |> Test.HTML.table_contents(css_query)
+    defp table_contents(widget, css_query) do
+      widget |> render() |> Test.HTML.table_contents(css_query)
     end
 
-    defp html(data_table, css_query) do
-      data_table |> render() |> Test.HTML.html(css_query)
+    defp html(widget, css_query) do
+      widget |> render() |> Test.HTML.html(css_query)
+    end
+
+    defp attr(widget, css_query, attr) do
+      widget |> render() |> Test.HTML.attr(css_query, attr)
     end
 
     setup do
@@ -72,6 +79,23 @@ defmodule CorexWeb.WidgetViewTest do
         ~s|<a class="data-table__title-button" href="/cars/new">New Car</a>|,
         ~s|<a class="data-table__title-button" href="/help">Help</a>|,
       ]
+    end
+  end
+
+  describe "widget %Form{}" do
+    setup do
+      user = %User{email: "email@example.com", password: ""} |> User.changeset(%{})
+
+      form =
+        Form.new(user, action: "/user/create", title: "Edit User")
+        |> Form.text_input(:email)
+        |> Form.password_input(:password)
+
+      [form: form]
+    end
+
+    test "renders a form", %{form: form} do
+      assert form |> attr("form", "action") == ["/user/create"]
     end
   end
 end
