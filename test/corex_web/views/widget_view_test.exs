@@ -1,14 +1,14 @@
-defmodule CorexWeb.DataTableViewTest do
+defmodule CorexWeb.WidgetViewTest do
   use CorexWeb.ConnCase, async: true
 
-  alias CorexWeb.DataTableView
-  alias CorexWeb.DataTableView.DataTable
+  alias CorexWeb.WidgetView
+  alias CorexWeb.WidgetView.DataTable
   alias CorexWeb.Test
 
   describe "render_data_table" do
     defp render(data_table) do
       rendered =
-        DataTableView.render_data_table(data_table, build_conn(:get, "/"))
+        WidgetView.widget(data_table, build_conn(:get, "/"))
         |> Phoenix.HTML.safe_to_string()
 
       "#{rendered}\n"

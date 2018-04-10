@@ -1,4 +1,4 @@
-defmodule CorexWeb.DataTableView do
+defmodule CorexWeb.WidgetView do
   use CorexWeb, :view
 
   alias CorexWeb.DataTableView.DataTable
@@ -45,9 +45,9 @@ defmodule CorexWeb.DataTableView do
     end
   end
 
-  def render_data_table(%DataTable{} = data_table, conn) do
+  def widget(%DataTable{} = data_table, conn) do
     render(
-      CorexWeb.DataTableView,
+      CorexWeb.WidgetView,
       "data_table.html",
       conn: conn,
       data_table: data_table

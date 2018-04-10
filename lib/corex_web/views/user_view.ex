@@ -1,8 +1,8 @@
 defmodule CorexWeb.UserView do
   use CorexWeb, :view
 
-  alias CorexWeb.DataTableView
-  alias CorexWeb.DataTableView.DataTable
+  alias CorexWeb.WidgetView
+  alias CorexWeb.WidgetView.DataTable
 
   def users_table(users, conn) do
     DataTable.new(users, title: "Users")
@@ -11,6 +11,6 @@ defmodule CorexWeb.UserView do
     |> DataTable.action("Show", &(user_path(conn, :show, &1)))
     |> DataTable.action("Edit", &(user_path(conn, :edit, &1)))
     |> DataTable.action("Delete", &(user_path(conn, :delete, &1)), :delete, &("Really delete user #{&1.email} ?"))
-    |> DataTableView.render_data_table(conn)
+    |> WidgetView.widget(conn)
   end
 end
