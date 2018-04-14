@@ -16,7 +16,7 @@ defmodule Corex.CLI.DoctorConfig do
 
   defp phoenix_checks(homebrew_packages) do
     [
-      check(homebrew_packages, "elixir", version: "1.5"),
+      check(homebrew_packages, "elixir", version: "1.6"),
       check(homebrew_packages, "node"),
       check(homebrew_packages, "yarn"),
       check(homebrew_packages, "phantomjs"),
