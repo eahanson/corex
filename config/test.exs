@@ -4,7 +4,7 @@ use Mix.Config
 # you can enable the server option below.
 config :corex, CorexWeb.Endpoint,
   http: [port: 4001],
-  server: false
+  server: true
 
 # Print only warnings and errors during test
 config :logger, level: :warn
@@ -24,3 +24,5 @@ config :junit_formatter,
   print_report_file: true
 
 config :pbkdf2_elixir, rounds: 1
+
+config :corex, :sql_sandbox, true

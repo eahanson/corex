@@ -1,6 +1,10 @@
 defmodule CorexWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :corex
 
+  if Application.get_env(:corex, :sql_sandbox) do
+    plug Phoenix.Ecto.SQL.Sandbox
+  end
+
   socket "/socket", CorexWeb.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.

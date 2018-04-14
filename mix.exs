@@ -44,6 +44,7 @@ defmodule Corex.Mixfile do
   defp deps do
     [
       {:apex, "~> 1.2"},
+      {:briefly, "~> 0.3", only: :test},
       {:comeonin, "~> 4.1"},
       {:cowboy, "~> 1.0"},
       {:floki, "~> 0.20.1"},
@@ -60,6 +61,7 @@ defmodule Corex.Mixfile do
       {:progress_bar, "~> 1.6"},
       {:table_rex, "~> 1.0"},
       {:timex, "~> 3.0"},
+      {:wallaby, "~> 0.19.1", [runtime: false, only: :test]}
     ]
   end
 
@@ -71,9 +73,14 @@ defmodule Corex.Mixfile do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
+      "assets.compile": &compile_assets/1,
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      "test": ["ecto.create --quiet", "ecto.migrate", "test"]
+      "test": ["assets.compile --quiet", "ecto.create --quiet", "ecto.migrate", "test"]
     ]
+  end
+
+  defp compile_assets(_) do
+    Mix.shell.cmd("assets/node_modules/brunch/bin/brunch build assets/")
   end
 end
