@@ -68,4 +68,8 @@ defmodule Corex.CLI.Commands do
     command("doctor") and
     command("status", fail_on_negative_status: false)
   end
+
+  def command(_, _) do
+    command("help", nil)
+  end
 end
