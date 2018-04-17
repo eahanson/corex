@@ -18,19 +18,19 @@ defmodule Corex.CLI.Doctor do
     }
   end
 
-  def check(:file, file, opts) do
-    {
-      "file/directory '#{file}' exists",
-      fn -> File.exists?(file) end,
-      opts[:remedy]
-    }
-  end
-
   def check(%Homebrew.Services{} = services, service, _opts) do
     {
       "#{service} is running",
       fn -> services |> Homebrew.running?(service) end,
       "brew services start #{service}"
+    }
+  end
+
+  def check(:file, file, opts) do
+    {
+      "file/directory '#{file}' exists",
+      fn -> File.exists?(file) end,
+      opts[:remedy]
     }
   end
 

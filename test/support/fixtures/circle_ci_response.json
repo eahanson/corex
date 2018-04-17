@@ -1,0 +1,105 @@
+[
+  {
+    "compare": "https://github.com/eahanson/corex/compare/a148744e0e5b...2bf6c024e58e",
+    "previous_successful_build": {
+      "build_num": 11,
+      "status": "success",
+      "build_time_millis": 30756
+    },
+    "build_parameters": null,
+    "oss": true,
+    "committer_date": "2018-04-13T20:12:33-07:00",
+    "body": "",
+    "usage_queued_at": "2018-04-14T03:21:28.882Z",
+    "fail_reason": null,
+    "retry_of": 15,
+    "reponame": "corex",
+    "ssh_users": [],
+    "build_url": "https://circleci.com/gh/eahanson/corex/16",
+    "parallel": 1,
+    "failed": true,
+    "branch": "master",
+    "username": "eahanson",
+    "author_date": "2018-04-13T20:12:33-07:00",
+    "why": "retry",
+    "user": {
+      "is_user": true,
+      "login": "eahanson",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/93359?v=4",
+      "name": "Erik Hanson",
+      "vcs_type": "github",
+      "id": 93359
+    },
+    "vcs_revision": "2bf6c024e58e6b8233e437d8337c6c5925e8aeff",
+    "vcs_tag": null,
+    "build_num": 16,
+    "infrastructure_fail": false,
+    "committer_email": "erik@eahanson.com",
+    "has_artifacts": true,
+    "previous": {
+      "build_num": 15,
+      "status": "failed",
+      "build_time_millis": 91194
+    },
+    "status": "failed",
+    "committer_name": "Erik Hanson",
+    "retries": null,
+    "subject": "Upgrade Circle to Elixir 1.6",
+    "vcs_type": "github",
+    "timedout": false,
+    "dont_build": null,
+    "lifecycle": "finished",
+    "no_dependency_cache": true,
+    "stop_time": "2018-04-14T03:22:59.764Z",
+    "ssh_disabled": true,
+    "build_time_millis": 88725,
+    "picard": {
+      "build_agent": {
+        "image": null,
+        "properties": {
+          "build_agent": "0.0.4835-11b415c",
+          "executor": "docker"
+        }
+      },
+      "resource_class": {
+        "cpu": 2.0,
+        "ram": 4096,
+        "class": "medium"
+      },
+      "executor": "docker"
+    },
+    "circle_yml": {
+      "string": "version: 2\njobs:\n  build:\n    parallelism: 1\n    docker:\n      - image: circleci/elixir:1.6\n        environment:\n          MIX_ENV: test\n      - image: circleci/postgres:9.6-alpine-ram\n        environment:\n          POSTGRES_USER: postgres\n          POSTGRES_DB: corex_test\n          POSTGRES_PASSWORD:\n\n    working_directory: ~/app\n\n    steps:\n      - checkout\n\n      - run: mix local.hex --force\n      - run: mix local.rebar --force\n\n      - restore_cache:\n          keys:\n            - v1-mix-cache-{{ .Branch }}-{{ checksum \"mix.lock\" }}\n            - v1-mix-cache-{{ .Branch }}\n            - v1-mix-cache\n      - restore_cache:\n          keys:\n            - v1-build-cache-{{ .Branch }}\n            - v1-build-cache\n      - run: mix do deps.get, compile\n      - save_cache:\n          key: v1-mix-cache-{{ .Branch }}-{{ checksum \"mix.lock\" }}\n          paths: \"deps\"\n      - save_cache:\n          key: v1-mix-cache-{{ .Branch }}\n          paths: \"deps\"\n      - save_cache:\n          key: v1-mix-cache\n          paths: \"deps\"\n      - save_cache:\n          key: v1-build-cache-{{ .Branch }}\n          paths: \"_build\"\n      - save_cache:\n          key: v1-build-cache\n          paths: \"_build\"\n\n      - run:\n          name: Wait for DB\n          command: dockerize -wait tcp://localhost:5432 -timeout 1m\n\n      - run: mix test\n\n      - store_test_results:\n          path: _build/results.xml"
+    },
+    "messages": [],
+    "is_first_green_build": false,
+    "job_name": null,
+    "start_time": "2018-04-14T03:21:31.039Z",
+    "canceler": null,
+    "all_commit_details": [
+      {
+        "committer_date": "2018-04-13T20:12:33-07:00",
+        "body": "",
+        "branch": "master",
+        "author_date": "2018-04-13T20:12:33-07:00",
+        "committer_email": "erik@eahanson.com",
+        "commit": "2bf6c024e58e6b8233e437d8337c6c5925e8aeff",
+        "committer_login": "eahanson",
+        "committer_name": "Erik Hanson",
+        "subject": "Upgrade Circle to Elixir 1.6",
+        "commit_url": "https://github.com/eahanson/corex/commit/2bf6c024e58e6b8233e437d8337c6c5925e8aeff",
+        "author_login": "eahanson",
+        "author_name": "Erik Hanson",
+        "author_email": "erik@eahanson.com"
+      }
+    ],
+    "platform": "2.0",
+    "outcome": "failed",
+    "vcs_url": "https://github.com/eahanson/corex",
+    "author_name": "Erik Hanson",
+    "node": null,
+    "queued_at": "2018-04-14T03:21:28.910Z",
+    "canceled": false,
+    "author_email": "erik@eahanson.com"
+  }
+]

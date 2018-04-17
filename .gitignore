@@ -29,3 +29,4 @@ npm-debug.log
 .idea
 *.iml
 bin/cli
+.envrc

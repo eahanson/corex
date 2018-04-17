@@ -15,6 +15,7 @@ defmodule Corex.CLI.Commands do
       ["doctor", "Check that everything is working"],
       ["shipit", "Update, run tests and push"],
       ["server", "Run the server"],
+      ["status", "Check the status"],
       ["test", "Run tests"],
       ["update", "Pull, migrate, and run doctor"],
     ]
@@ -47,6 +48,16 @@ defmodule Corex.CLI.Commands do
     command("git", ["push"])
   end
 
+  def command("status", opts) do
+    success? = CLI.exec("Status", &CLI.CircleCI.run/0)
+
+    case {success?, !!opts[:fail_on_negative_status]} do
+      {true, _} -> true
+      {false, true} -> false
+      {false, false} -> true
+    end
+  end
+
   def command("test", _) do
     CLI.exec("Running tests", "mix", ["test", "--color"])
   end
@@ -54,6 +65,7 @@ defmodule Corex.CLI.Commands do
   def command("update", _) do
     command("git", ["pull"]) and
     command("migrate") and
-    command("doctor")
+    command("doctor") and
+    command("status", fail_on_negative_status: false)
   end
 end

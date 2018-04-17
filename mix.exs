@@ -23,9 +23,11 @@ defmodule Corex.Mixfile do
       mod: {Corex.Application, []},
       extra_applications: [
         :logger,
+        :httpoison,
         :phoenix_slime,
         :runtime_tools,
         :timex,
+        :tzdata,
       ]
     ]
   end
@@ -49,6 +51,7 @@ defmodule Corex.Mixfile do
       {:cowboy, "~> 1.0"},
       {:floki, "~> 0.20.1"},
       {:gettext, "~> 0.11"},
+      {:httpoison, "~> 0.12"},
       {:junit_formatter, git: "https://github.com/sparta-science/junit-formatter.git", only: :test},
       {:pbkdf2_elixir, "~> 0.12.3"},
       {:phoenix, "~> 1.3.0"},
@@ -61,6 +64,7 @@ defmodule Corex.Mixfile do
       {:progress_bar, "~> 1.6"},
       {:table_rex, "~> 1.0"},
       {:timex, "~> 3.0"},
+      {:tzdata, "== 0.1.8", override: true},
       {:wallaby, "~> 0.19.1", [runtime: false, only: :test]}
     ]
   end
