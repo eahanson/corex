@@ -17,7 +17,8 @@ defmodule Corex.CLI.CircleCI do
   end
 
   def status do
-    request() |> parse() == "success"
+    failed? = request() |> parse()
+    !failed?
   end
 
   def url do
@@ -34,6 +35,6 @@ defmodule Corex.CLI.CircleCI do
   end
 
   def parse(response) do
-    response |> Poison.decode!() |> hd() |> Map.get("status")
+    response |> Poison.decode!() |> hd() |> Map.get("failed")
   end
 end
