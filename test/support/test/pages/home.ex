@@ -6,7 +6,7 @@ defmodule CorexWeb.Test.Pages.Home do
   alias CorexWeb.Endpoint
 
   def visit(session) do
-    session |> visit(page_path(Endpoint, :index))
+    session |> visit(landing_path(Endpoint, :index))
   end
 
   def click_log_in(session) do

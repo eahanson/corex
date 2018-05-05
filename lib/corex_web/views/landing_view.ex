@@ -1,4 +1,4 @@
-defmodule CorexWeb.PageView do
+defmodule CorexWeb.LandingView do
   use CorexWeb, :view
 
   def current_user?(conn) do

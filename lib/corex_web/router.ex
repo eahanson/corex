@@ -16,7 +16,7 @@ defmodule CorexWeb.Router do
   scope "/", CorexWeb do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", LandingController, :index
     resources "/session", SessionController
     resources "/users", UserController
   end

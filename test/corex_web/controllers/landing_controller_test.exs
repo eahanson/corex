@@ -1,4 +1,4 @@
-defmodule CorexWeb.PageControllerTest do
+defmodule CorexWeb.LandingControllerTest do
   use CorexWeb.ConnCase, async: true
 
   test "GET /", %{conn: conn} do

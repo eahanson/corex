@@ -1,4 +1,4 @@
-defmodule CorexWeb.PageController do
+defmodule CorexWeb.LandingController do
   use CorexWeb, :controller
 
   def index(conn, _params) do
