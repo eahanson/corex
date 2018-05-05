@@ -5,8 +5,11 @@ section.hero.is-info.is-fullheight
         .navbar-brand
           a.navbar-item[href="/"]
             b Corex
-          a.navbar-item[href="#"] Log In
-          a.navbar-item[href="#"] Sign Up
+          = if current_user?(@conn) do
+            a.navbar-item[href="#"] Account
+          - else
+            = link "Log In", to: session_path(@conn, :new), class: "navbar-item", data: [role: "log-in"]
+            a.navbar-item[href="#"] Sign Up
   .hero-body
     .container.has-text-centered
       .column.is-6.is-offset-3

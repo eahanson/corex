@@ -2,54 +2,80 @@ defmodule Corex.AccountsTest do
   use Corex.DataCase
 
   alias Corex.Accounts
+  alias Corex.Accounts.User
   alias Corex.Extra
   alias Corex.Test.Mom
 
-  describe "users" do
-    alias Corex.Accounts.User
-
-    test "list_users/0 returns all users" do
+  describe "list_users/0" do
+    test "returns all users" do
       "user1" |> Mom.user_attrs |> Accounts.create_user
       "user2" |> Mom.user_attrs |> Accounts.create_user
       assert Accounts.list_users() |> Extra.Enum.tids() == ~w{user1 user2}
     end
+  end
 
-    test "get_user!/1 returns the user with given id" do
-      {:ok, user} = "user1" |> Mom.user_attrs |> Accounts.create_user
-      assert Accounts.get_user!(user.id).tid == "user1"
+  describe "get_user" do
+    setup do
+      {:ok, user} = Mom.user_attrs("test") |> Accounts.create_user
+      [user: user]
     end
 
-    test "create_user/1 with valid data creates a user" do
+    test "returns the user with given id", %{user: user} do
+      assert Accounts.get_user!(user.id).tid == "test"
+    end
+
+    test "returns the user with the given email and password, if they are correct" do
+      {:ok, user} = Accounts.get_user(email: "test@example.com", password: "password123")
+      assert user.tid == "test"
+    end
+
+    test "returns :error if the given password is incorrect" do
+      assert Accounts.get_user(email: "test@example.com", password: "WRONG!") == {:error, "invalid password"}
+    end
+
+    test "returns :error if the given email does not correspond to a user" do
+      assert Accounts.get_user(email: "WRONG@example.com", password: "password123") == {:error, "user not found"}
+    end
+  end
+
+  describe "create_user/1" do
+    test "creates a user with valid data" do
       assert {:ok, %User{} = user} = Accounts.create_user(%{email: "foo@example.com", password: "password123"})
       assert user.email == "foo@example.com"
       assert user |> User.check_password("password123") == {:ok, user}
     end
 
-    test "create_user/1 with invalid data returns error changeset" do
+    test "returns error changeset with invalid data" do
       assert {:error, %Ecto.Changeset{} = changeset} = Accounts.create_user(%{email: "bad", password: "short"})
       assert changeset.valid? == false
       assert changeset.errors[:email] == {"has invalid format", [validation: :format]}
     end
+  end
 
-    test "update_user/2 with valid data updates the user" do
+  describe "update_user/2" do
+    test "updates the user with valid data" do
       {:ok, user} = Accounts.create_user(%{email: "foo@example.com", password: "password123"})
       assert {:ok, %User{} = user} = Accounts.update_user(user, %{email: "new@example.com"})
       assert user.email == "new@example.com"
     end
 
-    test "update_user/2 with invalid data returns error changeset" do
+    test "returns error changeset with invalid data" do
       {:ok, user} = Accounts.create_user(%{email: "foo@example.com", password: "password123"})
       assert {:error, %Ecto.Changeset{}} = Accounts.update_user(user, %{email: "bad"})
       assert user == Accounts.get_user!(user.id)
     end
+  end
 
-    test "delete_user/1 deletes the user" do
+  describe "delete_user/1 " do
+    test "deletes the user" do
       {:ok, user} = Mom.user_attrs |> Accounts.create_user()
       assert {:ok, %User{}} = Accounts.delete_user(user)
       assert_raise Ecto.NoResultsError, fn -> Accounts.get_user!(user.id) end
     end
+  end
 
-    test "change_user/1 returns a user changeset" do
+  describe "change_user/1" do
+    test "returns a user changeset" do
       {:ok, user} = Mom.user_attrs |> Accounts.create_user()
       assert %Ecto.Changeset{} = Accounts.change_user(user)
     end

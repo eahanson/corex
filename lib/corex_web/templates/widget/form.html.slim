@@ -17,4 +17,7 @@
             = error_tag f, :email
         .field
           .control
-            = submit "Save", class: "button is-link"
+            = submit class: "button is-link" do
+              span Continue
+              span.icon
+                i.fas.fa-angle-right

@@ -32,6 +32,10 @@ defmodule Corex.Accounts.User do
     |> unique_constraint(:email)
   end
 
+  def check_password(nil, _password) do
+    {:error, "user not found"}
+  end
+
   def check_password(%User{} = user, password) do
     user |> Comeonin.Pbkdf2.check_pass(password)
   end
