@@ -13,7 +13,7 @@ defmodule CorexWeb.UserControllerTest do
   describe "new user" do
     test "renders form", %{conn: conn} do
       conn = get conn, user_path(conn, :new)
-      assert html_response(conn, 200) =~ "New User"
+      assert html_response(conn, 200) =~ "Create User"
     end
   end
 
@@ -30,7 +30,7 @@ defmodule CorexWeb.UserControllerTest do
 
     test "renders errors when data is invalid", %{conn: conn} do
       conn = post conn, user_path(conn, :create), user: Mom.user_attrs |> Map.put(:email, "bad")
-      assert html_response(conn, 200) =~ "New User"
+      assert html_response(conn, 200) =~ "Create User"
     end
   end
 

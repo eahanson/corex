@@ -40,6 +40,7 @@ defmodule CorexWeb do
       import CorexWeb.Router.Helpers
       import CorexWeb.ErrorHelpers
       import CorexWeb.Gettext
+      import CorexWeb.ViewHelpers
     end
   end
 

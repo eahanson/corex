@@ -1,15 +1,6 @@
 section.hero.is-info.is-fullheight
   .hero-head
-    nav.navbar
-      .container
-        .navbar-brand
-          a.navbar-item[href="/"]
-            b Corex
-          = if current_user?(@conn) do
-            a.navbar-item[href="#"] Account
-          - else
-            = link "Log In", to: session_path(@conn, :new), class: "navbar-item", data: [role: "log-in"]
-            a.navbar-item[href="#"] Sign Up
+    = render CorexWeb.SharedView, "nav.html", conn: @conn
   .hero-body
     .container.has-text-centered
       .column.is-6.is-offset-3
