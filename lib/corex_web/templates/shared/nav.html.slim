@@ -5,6 +5,7 @@ nav.navbar
         b Corex
       = if current_user?(@conn) do
         a.navbar-item[href="#"] Account
+        a.navbar-item[href="#"] Log Out
       - else
         = link "Log In", to: session_path(@conn, :new), class: "navbar-item", data: [role: "log-in"]
         a.navbar-item[href="#"] Sign Up

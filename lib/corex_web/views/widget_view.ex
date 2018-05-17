@@ -1,6 +1,8 @@
 defmodule CorexWeb.WidgetView do
   use CorexWeb, :view
 
+  import Corex.Format
+
   alias CorexWeb.DataTableView.DataTable
   alias CorexWeb.DataTableView.Form
 
@@ -46,6 +48,32 @@ defmodule CorexWeb.WidgetView do
     end
   end
 
+  defmodule DetailTable do
+    defstruct ~w{
+      rows
+      table_actions
+      title
+    }a
+
+    def new(title: title) do
+      %DetailTable{title: title, rows: [], table_actions: []}
+    end
+
+    def row(%DetailTable{} = detail_table, name, value) do
+      %DetailTable{ detail_table | rows: detail_table.rows ++ [%{name: name, value: value}]}
+    end
+
+    def table_action(%DetailTable{} = detail_table, title, path) do
+      action = %{title: title, path: path, method: :get, confirm: nil, class: "detail-table__title-button"}
+      %DetailTable{ detail_table | table_actions: detail_table.table_actions ++ [action]}
+    end
+
+    def table_action(%DetailTable{} = detail_table, title, path, :delete, confirm) do
+      action = %{title: title, path: path, method: :delete, confirm: confirm, class: "detail-table__title-button--delete"}
+      %DetailTable{ detail_table | table_actions: detail_table.table_actions ++ [action]}
+    end
+  end
+
   defmodule Form do
     defstruct ~w{
       action
@@ -81,6 +109,15 @@ defmodule CorexWeb.WidgetView do
       "data_table.html",
       conn: conn,
       data_table: data_table
+    )
+  end
+
+  def widget(%DetailTable{} = detail_table, conn) do
+    render(
+      CorexWeb.WidgetView,
+      "detail_table.html",
+      conn: conn,
+      detail_table: detail_table
     )
   end
 

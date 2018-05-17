@@ -1,0 +1,49 @@
+@import "bulma"
+
+table.detail-table
+  @extend .table
+  @extend .is-hoverable
+
+  border: $table-cell-border
+
+  td
+    vertical-align: middle
+
+  thead
+    th.detail-table__title
+      text-align: center
+      border-width: 0
+      background-color: $table-row-hover-background-color
+
+  .detail-table__title-container
+    @extend .level
+
+  .detail-table__title-left
+    @extend .level-left
+
+  .detail-table__title-text
+    @extend .level-item
+    @extend .title
+    @extend .is-4
+
+  .detail-table__title-right
+    @extend .level-right
+    @extend .detail-table__buttons
+
+  .detail-table__title-button
+    @extend .detail-table__button
+
+  .detail-table__buttons
+    @extend .buttons
+
+  .detail-table__button
+    @extend .button
+    @extend .is-small
+    @extend .is-outlined
+    @extend .is-link
+    font-weight: normal
+
+  .detail-table__title-button--delete
+    @extend .detail-table__button
+    @extend .is-danger
+

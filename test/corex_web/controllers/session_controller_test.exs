@@ -20,7 +20,7 @@ defmodule CorexWeb.SessionControllerTest do
       assert redirected_to(conn) == user_path(conn, :show, id)
 
       conn = get conn, user_path(conn, :show, id)
-      assert html_response(conn, 200) =~ "Show User"
+      assert html_response(conn, 200) =~ ~r|User \d+|
 
       assert Plug.Conn.get_session(conn, :current_user_id) == user.id
     end

@@ -10,4 +10,14 @@ defmodule Corex.Test.Assertions do
       """
     end
   end
+
+  def assert_eq(string, %Regex{} = regex) when is_binary(string) do
+    unless string =~ regex do
+      ExUnit.Assertions.flunk """
+        Expected string to match regex
+        left (string): #{string}
+        right (regex): #{regex |> inspect}
+      """
+    end
+  end
 end

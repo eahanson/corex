@@ -1,0 +1,16 @@
+table.detail-table
+  thead
+    tr
+      th.detail-table__title[colspan=2]
+        .detail-table__title-container
+          .detail-table__title-left
+            span.detail-table__title-text= @detail_table.title
+          .detail-table__title-right
+            = if @detail_table.table_actions |> length > 0 do
+              = for action <- @detail_table.table_actions do
+                = link action.title, to: action.path, class: action.class, method: action.method, data: [confirm: action.confirm]
+  tbody
+    = for row <- @detail_table.rows do
+      tr
+        th= row.name
+        td= row.value

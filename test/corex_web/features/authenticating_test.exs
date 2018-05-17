@@ -10,5 +10,12 @@ defmodule CorexWeb.AuthenticatingTest do
     |> Pages.Home.click_log_in()
     |> Pages.Login.submit_form(email: "user@example.com", password: "password123")
 #    |> Pages.assert_logged_in("user@example.com")
+
+    # log out
+  end
+
+  @tag :skip
+  test "sign in failure shows errors and does not log in" do
+
   end
 end

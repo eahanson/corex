@@ -1,8 +1,2 @@
-h2 Show User
-ul
-  li
-    strong Email:
-    = @user.email
-  li
-span= link "Edit", to: user_path(@conn, :edit, @user)
-span= link "Back", to: user_path(@conn, :index)
+.section
+  = user_table(@user, @conn)

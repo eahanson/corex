@@ -19,7 +19,10 @@ defmodule CorexWeb.ConnCase do
     quote do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
+
+      import Corex.Test.Assertions
       import CorexWeb.Router.Helpers
+
       alias Corex.Test.Mom
 
       # The default endpoint for testing
