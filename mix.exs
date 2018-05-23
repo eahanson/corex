@@ -65,7 +65,7 @@ defmodule Corex.Mixfile do
       {:table_rex, "~> 1.0"},
       {:timex, "~> 3.0"},
       {:tzdata, "== 0.1.8", override: true},
-      {:wallaby, "== 0.19.1", [runtime: false, only: :test]}
+      {:wallaby, "~> 0.19", runtime: false, only: :test}
     ]
   end
 
@@ -80,11 +80,18 @@ defmodule Corex.Mixfile do
       "assets.compile": &compile_assets/1,
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      "test": ["assets.compile --quiet", "ecto.create --quiet", "ecto.migrate", "test"]
+      "test": ["test.phantom_limit", "assets.compile --quiet", "ecto.create --quiet", "ecto.migrate", "test"],
+      "test.phantom_limit": &check_phantom_limit/1
     ]
   end
 
   defp compile_assets(_) do
     Mix.shell.cmd("assets/node_modules/brunch/bin/brunch build assets/")
+  end
+
+  defp check_phantom_limit(_) do
+    if Mix.shell.cmd("ps aux | grep -vq grep | grep -icq phantom") == 0 do
+      raise "Phantoms are running. Try: killall -m phantomjs"
+    end
   end
 end

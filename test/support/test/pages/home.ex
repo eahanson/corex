@@ -14,6 +14,8 @@ defmodule CorexWeb.Test.Pages.Home do
   end
 
   def click_log_in(session) do
-    session |> find(@navbar, fn navbar -> navbar |> click(@log_in_button) end)
+    session |> find(@navbar, fn navbar ->
+      navbar |> click(@log_in_button)
+    end)
   end
 end

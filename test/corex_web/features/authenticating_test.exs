@@ -3,7 +3,6 @@ defmodule CorexWeb.AuthenticatingTest do
 
   alias CorexWeb.Test.Pages
 
-  @tag :skip
   test "signing in", %{session: session} do
     session
     |> Pages.Home.visit()

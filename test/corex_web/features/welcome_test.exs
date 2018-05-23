@@ -5,7 +5,6 @@ defmodule CorexWeb.WelcomeTest do
 
   alias CorexWeb.Test.Pages
 
-  @tag :skip
   test "go to the home page", %{session: session} do
     session
     |> Pages.Home.visit()
