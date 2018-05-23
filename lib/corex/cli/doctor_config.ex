@@ -19,8 +19,8 @@ defmodule Corex.CLI.DoctorConfig do
       check(homebrew_packages, "elixir", version: "1.6"),
       check(homebrew_packages, "node"),
       check(homebrew_packages, "yarn"),
-      check(homebrew_packages, "phantomjs"),
-      check(:file, "assets/node_modules", remedy: "(cd assets && yarn install)")
+      check(:file, "assets/node_modules", remedy: "(cd assets && yarn install)"),
+      check(:which, "phantomjs", remedy: "npm install -g phantomjs-prebuilt")
     ]
   end
 

@@ -34,6 +34,17 @@ defmodule Corex.CLI.Doctor do
     }
   end
 
+  def check(:which, executable, opts) do
+    {
+      "executable '#{executable} exists",
+      fn ->
+        {_result, status} = System.cmd("which", [executable])
+        status == 0
+      end,
+      opts[:remedy]
+    }
+  end
+
   defp run_check({description, command, remedy}) do
     "Checking: " <> description <> "... " |> Color.write(:cyan)
 
