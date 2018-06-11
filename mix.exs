@@ -6,12 +6,12 @@ defmodule Corex.Mixfile do
       app: :corex,
       version: "0.0.1",
       elixir: "~> 1.6.0",
-      elixirc_paths: elixirc_paths(Mix.env),
-      compilers: [:phoenix, :gettext] ++ Mix.compilers,
-      start_permanent: Mix.env == :prod,
+      elixirc_paths: elixirc_paths(Mix.env()),
+      compilers: [:phoenix, :gettext] ++ Mix.compilers(),
+      start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
-      escript: escript(),
+      escript: escript()
     ]
   end
 
@@ -27,7 +27,7 @@ defmodule Corex.Mixfile do
         :phoenix_slime,
         :runtime_tools,
         :timex,
-        :tzdata,
+        :tzdata
       ]
     ]
   end
@@ -38,7 +38,7 @@ defmodule Corex.Mixfile do
 
   # Specifies which paths to compile per environment.
   defp elixirc_paths(:test), do: ["lib", "test/support"]
-  defp elixirc_paths(_),     do: ["lib"]
+  defp elixirc_paths(_), do: ["lib"]
 
   # Specifies your project dependencies.
   #
@@ -52,7 +52,7 @@ defmodule Corex.Mixfile do
       {:floki, "~> 0.20.1"},
       {:gettext, "~> 0.11"},
       {:httpoison, "~> 0.12"},
-      {:junit_formatter, git: "https://github.com/sparta-science/junit-formatter.git", only: :test},
+      {:junit_formatter, github: "sparta-science/junit-formatter", only: :test},
       {:pbkdf2_elixir, "~> 0.12.3"},
       {:phoenix, "~> 1.3.0"},
       {:phoenix_ecto, "~> 3.2"},
@@ -65,7 +65,11 @@ defmodule Corex.Mixfile do
       {:table_rex, "~> 1.0"},
       {:timex, "~> 3.0"},
       {:tzdata, "== 0.1.8", override: true},
-      {:wallaby, "~> 0.19", path: "/Users/erik/Development/github/eahanson/wallaby", runtime: false, only: :test}
+      {:wallaby, "~> 0.19",
+       github: "keathley/wallaby",
+       ref: "fb7bb0e2150f367f87f4dd9b7e3093a7613baa89",
+       runtime: false,
+       only: :test}
     ]
   end
 
@@ -80,17 +84,23 @@ defmodule Corex.Mixfile do
       "assets.compile": &compile_assets/1,
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      "test": ["test.phantom_limit", "assets.compile --quiet", "ecto.create --quiet", "ecto.migrate", "test"],
+      test: [
+        "test.phantom_limit",
+        "assets.compile --quiet",
+        "ecto.create --quiet",
+        "ecto.migrate",
+        "test"
+      ],
       "test.phantom_limit": &check_phantom_limit/1
     ]
   end
 
   defp compile_assets(_) do
-    Mix.shell.cmd("assets/node_modules/brunch/bin/brunch build assets/")
+    Mix.shell().cmd("assets/node_modules/brunch/bin/brunch build assets/")
   end
 
   defp check_phantom_limit(_) do
-    if Mix.shell.cmd("ps aux | grep -vq grep | grep -icq phantom") == 0 do
+    if Mix.shell().cmd("ps aux | grep -vq grep | grep -icq phantom") == 0 do
       raise "Phantoms are running. Try: killall -m phantomjs"
     end
   end
