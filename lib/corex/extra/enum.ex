@@ -1,6 +1,14 @@
 defmodule Corex.Extra.Enum do
   alias Corex.Presence
 
+  def at!(enum, index) do
+    if length(enum) < (index + 1) do
+      raise "Out of range: index #{index} of enum with length #{length(enum)}: #{inspect(enum)}"
+    else
+      Enum.at(enum, index)
+    end
+  end
+
   def compact(enum) do
     enum |> Enum.reject(&(is_nil(&1)))
   end
@@ -9,12 +17,10 @@ defmodule Corex.Extra.Enum do
     enum |> compact |> Enum.reject(&(Presence.is_blank?(&1)))
   end
 
-  def at!(enum, index) do
-    if length(enum) < (index + 1) do
-      raise "Out of range: index #{index} of enum with length #{length(enum)}: #{inspect(enum)}"
-    else
-      Enum.at(enum, index)
-    end
+  def pluck(enumerable, property) do
+    Enum.map(enumerable, fn object ->
+      Map.get(object, property)
+    end)
   end
 
   def tids(enumerable) do

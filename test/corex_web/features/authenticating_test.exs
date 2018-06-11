@@ -1,14 +1,18 @@
 defmodule CorexWeb.AuthenticatingTest do
-  use Corex.FeatureCase, async: true
+  use Corex.FeatureCase, async: false
 
+  alias Corex.Accounts
+  alias Corex.Test.Mom
   alias CorexWeb.Test.Pages
 
   test "signing in", %{session: session} do
+    Mom.user_attrs("new-user") |> Accounts.create_user()
+
     session
     |> Pages.Home.visit()
     |> Pages.Home.click_log_in()
-    |> Pages.Login.submit_form(email: "user@example.com", password: "password123")
-#    |> Pages.assert_logged_in("user@example.com")
+    |> Pages.Login.submit_form(email: "new-user@example.com", password: "password123")
+    |> Pages.assert_logged_in("new-user")
 
     # log out
   end

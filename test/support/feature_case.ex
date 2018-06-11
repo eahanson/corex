@@ -14,6 +14,7 @@ defmodule Corex.FeatureCase do
 
       import Corex.Test.Assertions
       import Corex.Test.FeatureHelpers
+      import Corex.Test.WaitUntil
     end
   end
 

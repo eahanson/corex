@@ -65,7 +65,7 @@ defmodule Corex.Mixfile do
       {:table_rex, "~> 1.0"},
       {:timex, "~> 3.0"},
       {:tzdata, "== 0.1.8", override: true},
-      {:wallaby, "~> 0.19", runtime: false, only: :test}
+      {:wallaby, "~> 0.19", path: "/Users/erik/Development/github/eahanson/wallaby", runtime: false, only: :test}
     ]
   end
 

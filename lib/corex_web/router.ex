@@ -17,7 +17,7 @@ defmodule CorexWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", LandingController, :index
-    resources "/session", SessionController
+    resources "/session", SessionController, singleton: true
     resources "/users", UserController
   end
 

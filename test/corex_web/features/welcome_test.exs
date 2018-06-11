@@ -1,5 +1,5 @@
 defmodule CorexWeb.WelcomeTest do
-  use Corex.FeatureCase, async: true
+  use Corex.FeatureCase, async: false
 
   import Wallaby.Query, only: [css: 2]
 
