@@ -2,10 +2,11 @@
   .columns
     .column.is-one-third.is-offset-one-third
       = form_for @form.changeset, @form.action, fn f ->
-        h3.title= @form.title
-        = if @form.changeset.action do
-          .notification.is-danger
-            p There was an error on the form
+        h3.title
+          = @form.title
+          = if length(f.errors) > 0 do
+            span.icon.is-small.has-text-warning
+              i.fas.fa-exclamation-triangle[style="margin-left: 1em; font-size: 0.6em"]
         = for field <- @form.fields do
           .field
             = label f, field.name, class: "label"
@@ -14,7 +15,7 @@
               = field.input_fun.(f, field.name, class: classes, autocomplete: field.autocomplete)
               span.icon.is-small.is-left
                 i.fas[class="fa-#{field.icon}"]
-            = error_tag f, :email
+            = error_tag f, field.name
         .field
           .control
             = submit class: "button is-link" do

@@ -6,10 +6,10 @@ defmodule Corex.Accounts.User do
   alias Corex.Accounts.User
 
   schema "users" do
-    field :encrypted_password, :string
-    field :email, :string
-    field :password, :string, virtual: true
-    field :tid, :string
+    field(:encrypted_password, :string)
+    field(:email, :string)
+    field(:password, :string, virtual: true)
+    field(:tid, :string)
 
     timestamps()
   end
@@ -30,6 +30,14 @@ defmodule Corex.Accounts.User do
     |> validate_required([:email, :encrypted_password])
     |> validate_format(:email, ~r/@/)
     |> unique_constraint(:email)
+  end
+
+  def unauthenticated_changeset(attrs) do
+    %User{}
+    |> cast(attrs, [:email, :password])
+    |> validate_change(:email, fn _, _ -> [email: "Must match password"] end)
+    |> validate_change(:password, fn _, _ -> [password: "Must match email"] end)
+    |> Map.put(:action, :auth)
   end
 
   def check_password(nil, _password) do

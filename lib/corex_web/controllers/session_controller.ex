@@ -18,7 +18,7 @@ defmodule CorexWeb.SessionController do
         |> redirect(to: user_path(conn, :show, user))
 
       {:error, _message} ->
-        changeset = Accounts.change_user(%User{}, %{email: email})
+        changeset = Accounts.User.unauthenticated_changeset(%{email: email, password: password})
         render(conn, "new.html", changeset: changeset)
     end
   end

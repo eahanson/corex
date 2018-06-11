@@ -17,7 +17,14 @@ defmodule CorexWeb.AuthenticatingTest do
     |> Pages.assert_logged_out()
   end
 
-  @tag :skip
-  test "sign in failure shows errors and does not log in" do
+  test "sign in failure shows errors and does not log in", %{session: session} do
+    Mom.user_attrs("new-user") |> Accounts.create_user()
+
+    session
+    |> Pages.Home.visit()
+    |> Pages.Nav.click_log_in()
+    |> Pages.Login.submit_form(email: "new-user@example.com", password: "BAD BAD BAD")
+    |> Pages.assert_logged_out()
+    |> Pages.Login.assert_errors(email: "Must match password", password: "Must match email")
   end
 end
