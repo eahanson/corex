@@ -3,6 +3,7 @@ defmodule CorexWeb.SessionController do
 
   alias Corex.Accounts
   alias Corex.Accounts.User
+  alias CorexWeb.Session
 
   def new(conn, _params) do
     changeset = Accounts.change_user(%User{})
@@ -13,9 +14,8 @@ defmodule CorexWeb.SessionController do
     case Accounts.get_user(email: email, password: password) do
       {:ok, user} ->
         conn
-        |> Plug.Conn.put_session(:current_user_id, user.id)
-        |> Plug.Conn.put_session(:current_user_tid, user.tid)
-        |> redirect(to: user_path(conn, :show, user))
+        |> Session.set_current_user(user)
+        |> redirect(to: profile_path(conn, :show))
 
       {:error, _message} ->
         changeset = Accounts.User.unauthenticated_changeset(%{email: email, password: password})

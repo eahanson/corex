@@ -4,7 +4,7 @@ nav.navbar
       a.navbar-item[href="/"]
         b Corex
       = if current_user?(@conn) do
-        a.navbar-item[href="#" data-role="account-link" data-tid="#{current_user_tid(@conn)}"] Account
+        = link "Account", to: profile_path(@conn, :show), class: "navbar-item", data: [role: "account-link", tid: current_user_tid(@conn)]
         = link "Log Out", to: session_path(@conn, :delete), method: :delete, class: "navbar-item", data: [role: "log-out"]
       - else
         = link "Log In", to: session_path(@conn, :new), class: "navbar-item", data: [role: "log-in"]

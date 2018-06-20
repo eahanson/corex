@@ -13,7 +13,7 @@ defmodule CorexWeb.AuthenticatingTest do
     |> Pages.Nav.click_log_in()
     |> Pages.Login.submit_form(email: "new-user@example.com", password: "password123")
     |> Pages.assert_logged_in("new-user")
-    |> Pages.Users.Show.assert_user("new-user")
+    |> Pages.Profiles.Show.assert_user("new-user")
     |> Pages.Nav.click_log_out()
     |> Pages.assert_logged_out()
   end

@@ -1,9 +1,11 @@
 defmodule CorexWeb.ViewHelpers do
+  alias CorexWeb.Session
+
   def current_user?(conn) do
-    !! Plug.Conn.get_session(conn, :current_user_id)
+    !!Session.get_current_user_id(conn)
   end
 
   def current_user_tid(conn) do
-    Plug.Conn.get_session(conn, :current_user_tid)
+    Session.get_current_user_tid(conn)
   end
 end
