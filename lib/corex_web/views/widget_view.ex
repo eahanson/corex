@@ -16,16 +16,16 @@ defmodule CorexWeb.WidgetView do
     }a
 
     def new(data, title: title) do
-      %DataTable{ actions: [], columns: [], data: data, table_actions: [], title: title }
+      %DataTable{actions: [], columns: [], data: data, table_actions: [], title: title}
     end
 
     def column(%DataTable{} = data_table, title, contents_fun) when is_function(contents_fun) do
-      %DataTable{ data_table | columns: data_table.columns ++ [{title, contents_fun}]}
+      %DataTable{data_table | columns: data_table.columns ++ [{title, contents_fun}]}
     end
 
     def column(%DataTable{} = data_table, title, contents_key) when is_atom(contents_key) do
       contents_fun = &(&1 |> Map.get(contents_key))
-      %DataTable{ data_table | columns: data_table.columns ++ [{title, contents_fun}]}
+      %DataTable{data_table | columns: data_table.columns ++ [{title, contents_fun}]}
     end
 
     def column(%DataTable{} = data_table, title, contents) do
@@ -34,43 +34,45 @@ defmodule CorexWeb.WidgetView do
 
     def action(%DataTable{} = data_table, title, path_fun, :delete, confirm_fun) do
       action = %{title: title, path_fun: path_fun, method: :delete, confirm_fun: confirm_fun, class: "data-table__button--delete"}
-      %DataTable{ data_table | actions: data_table.actions ++ [action]}
+      %DataTable{data_table | actions: data_table.actions ++ [action]}
     end
 
     def action(%DataTable{} = data_table, title, path_fun) do
       nil_fun = fn _ -> nil end
       action = %{title: title, path_fun: path_fun, method: :get, confirm_fun: nil_fun, class: "data-table__button"}
-      %DataTable{ data_table | actions: data_table.actions ++ [action]}
+      %DataTable{data_table | actions: data_table.actions ++ [action]}
     end
 
     def table_action(%DataTable{} = data_table, title, path) do
-      %DataTable{ data_table | table_actions: data_table.table_actions ++ [{title, path}]}
+      %DataTable{data_table | table_actions: data_table.table_actions ++ [{title, path}]}
     end
   end
 
   defmodule DetailTable do
     defstruct ~w{
+      role
       rows
       table_actions
+      tid
       title
     }a
 
-    def new(title: title) do
-      %DetailTable{title: title, rows: [], table_actions: []}
+    def new(title: title, role: role, tid: tid) do
+      %DetailTable{title: title, rows: [], table_actions: [], role: role, tid: tid}
     end
 
     def row(%DetailTable{} = detail_table, name, value) do
-      %DetailTable{ detail_table | rows: detail_table.rows ++ [%{name: name, value: value}]}
+      %DetailTable{detail_table | rows: detail_table.rows ++ [%{name: name, value: value}]}
     end
 
     def table_action(%DetailTable{} = detail_table, title, path) do
       action = %{title: title, path: path, method: :get, confirm: nil, class: "detail-table__title-button"}
-      %DetailTable{ detail_table | table_actions: detail_table.table_actions ++ [action]}
+      %DetailTable{detail_table | table_actions: detail_table.table_actions ++ [action]}
     end
 
     def table_action(%DetailTable{} = detail_table, title, path, :delete, confirm) do
       action = %{title: title, path: path, method: :delete, confirm: confirm, class: "detail-table__title-button--delete"}
-      %DetailTable{ detail_table | table_actions: detail_table.table_actions ++ [action]}
+      %DetailTable{detail_table | table_actions: detail_table.table_actions ++ [action]}
     end
   end
 
@@ -87,19 +89,23 @@ defmodule CorexWeb.WidgetView do
     end
 
     def text_input(%Form{} = form, name, icon \\ nil) do
-      icon = case {name, icon} do
-        {:email, nil} -> "at"
-        {_, icon} -> icon
-      end
-      form |> field(%{name: name, icon: icon, input_fun: &Phoenix.HTML.Form.text_input/3, autocomplete: nil})
+      icon =
+        case {name, icon} do
+          {:email, nil} -> "at"
+          {_, icon} -> icon
+        end
+
+      form
+      |> field(%{name: name, icon: icon, input_fun: &Phoenix.HTML.Form.text_input/3, autocomplete: nil})
     end
 
     def password_input(%Form{} = form, name) do
-      form |> field(%{name: name, icon: "key", input_fun: &Phoenix.HTML.Form.password_input/3, autocomplete: "new-password"})
+      form
+      |> field(%{name: name, icon: "key", input_fun: &Phoenix.HTML.Form.password_input/3, autocomplete: "new-password"})
     end
 
     defp field(%Form{} = form, field) do
-      %Form{ form | fields: form.fields ++ [field]}
+      %Form{form | fields: form.fields ++ [field]}
     end
   end
 

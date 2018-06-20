@@ -11,14 +11,14 @@ defmodule CorexWeb.UserView do
     DataTable.new(users, title: "Users")
     |> DataTable.table_action("New User", user_path(conn, :new))
     |> DataTable.column("Email", :email)
-    |> DataTable.action("Show", &(user_path(conn, :show, &1)))
-    |> DataTable.action("Edit", &(user_path(conn, :edit, &1)))
-    |> DataTable.action("Delete", &(user_path(conn, :delete, &1)), :delete, &("Really delete user #{&1.email} ?"))
+    |> DataTable.action("Show", &user_path(conn, :show, &1))
+    |> DataTable.action("Edit", &user_path(conn, :edit, &1))
+    |> DataTable.action("Delete", &user_path(conn, :delete, &1), :delete, &"Really delete user #{&1.email} ?")
     |> WidgetView.widget(conn)
   end
 
   def user_table(%User{} = user, conn) do
-    DetailTable.new(title: "User #{user.id}")
+    DetailTable.new(title: "User #{user.id}", role: "user-detail-table", tid: user.tid)
     |> DetailTable.table_action("Edit", user_path(conn, :edit, user))
     |> DetailTable.table_action("Delete", user_path(conn, :delete, user), :delete, "Really delete user #{user.email}?")
     |> DetailTable.row("ID", user.id)
