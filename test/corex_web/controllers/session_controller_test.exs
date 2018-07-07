@@ -28,8 +28,8 @@ defmodule CorexWeb.SessionControllerTest do
     end
 
     test "renders errors when data is invalid", %{conn: conn} do
-      conn = post(conn, user_path(conn, :create), user: Test.Mom.user_attrs("user") |> Map.put(:email, "bad"))
-      assert html_response(conn, 200) =~ "Create User"
+      conn = post(conn, session_path(conn, :create), user: Test.Mom.user_attrs("user") |> Map.put(:email, "bad"))
+      assert html_response(conn, 200) =~ "Log In"
     end
   end
 

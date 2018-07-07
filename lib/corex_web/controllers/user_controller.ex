@@ -16,12 +16,12 @@ defmodule CorexWeb.UserController do
     render(conn, "index.html", users: users)
   end
 
-  def new(conn, _params, _role) do
+  def new(conn, _params, role) when is_admin?(role) do
     changeset = Accounts.change_user(%User{})
     render(conn, "new.html", changeset: changeset)
   end
 
-  def create(conn, %{"user" => user_params}, _role) do
+  def create(conn, %{"user" => user_params}, role) when is_admin?(role) do
     case Accounts.create_user(user_params) do
       {:ok, user} ->
         conn |> redirect(to: user_path(conn, :show, user))
@@ -36,13 +36,13 @@ defmodule CorexWeb.UserController do
     render(conn, "show.html", user: user)
   end
 
-  def edit(conn, %{"id" => id}, _role) do
+  def edit(conn, %{"id" => id}, role) when is_admin?(role) do
     user = Accounts.get_user!(id)
     changeset = Accounts.change_user(user)
     render(conn, "edit.html", user: user, changeset: changeset)
   end
 
-  def update(conn, %{"id" => id, "user" => user_params}, _role) do
+  def update(conn, %{"id" => id, "user" => user_params}, role) when is_admin?(role) do
     user = Accounts.get_user!(id)
 
     case Accounts.update_user(user, user_params) do
@@ -54,7 +54,7 @@ defmodule CorexWeb.UserController do
     end
   end
 
-  def delete(conn, %{"id" => id}, _role) do
+  def delete(conn, %{"id" => id}, role) when is_admin?(role) do
     user = Accounts.get_user!(id)
     {:ok, _user} = Accounts.delete_user(user)
 
