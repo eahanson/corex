@@ -1,9 +1,7 @@
 defmodule Corex.Test.Session do
   use Plug.Test
 
-  import ExUnit.Assertions
-
-  alias Corex.Accounts.User
+  alias Corex.Accounts
   alias Corex.Test.Mom
 
   def login(conn, user) do
@@ -17,10 +15,12 @@ defmodule Corex.Test.Session do
   end
 
   def login_as(conn, :member) do
-    conn |> login(struct(User, Mom.user_attrs("member", id: 1000)))
+    {:ok, member} = Mom.user_attrs("member") |> Accounts.create_user()
+    conn |> login(member)
   end
 
   def login_as(conn, :admin) do
-    conn |> login(struct(User, Mom.admin_attrs(id: 1000)))
+    {:ok, admin} = Mom.admin_attrs() |> Accounts.create_admin()
+    conn |> login(admin)
   end
 end
