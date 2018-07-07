@@ -24,10 +24,10 @@ defmodule Corex.Test.Auth do
     ~w{guest member admin}a
     |> Enum.map(fn user_level ->
       case {user_level in allowed_user_levels, get_status(conn, user_level, fun)} do
-        {true, {:success, status}} -> [user_level, "200-299", status, true]
-        {false, {:success, status}} -> [user_level, "300-599", status, false]
-        {true, {:failure, status}} -> [user_level, "200-299", status, false]
-        {false, {:failure, status}} -> [user_level, "300-599", status, true]
+        {true, {:success, status}} -> [user_level, "2xx, 3xx", status, true]
+        {false, {:success, status}} -> [user_level, "4xx, 5xx", status, false]
+        {true, {:failure, status}} -> [user_level, "2xx, 3xx", status, false]
+        {false, {:failure, status}} -> [user_level, "4xx, 5xx", status, true]
       end
     end)
   end
@@ -43,7 +43,7 @@ defmodule Corex.Test.Auth do
         Phoenix.ActionClauseError -> 400
       end
 
-    if status in 200..299 do
+    if status in 200..399 do
       {:success, status}
     else
       {:failure, status}
