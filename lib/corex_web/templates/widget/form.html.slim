@@ -12,7 +12,7 @@
             = label f, field.name, class: "label"
             .control.has-icons-left
               - classes = if f.errors |> Keyword.has_key?(field.name), do: "input is-danger", else: "input"
-              = field.input_fun.(f, field.name, class: classes, autocomplete: field.autocomplete)
+              = field.input_fun.(f, field.name, class: classes, autocomplete: field.autocomplete, autofocus: field[:autofocus])
               span.icon.is-small.is-left
                 i.fas[class="fa-#{field.icon}"]
             = error_tag f, field.name

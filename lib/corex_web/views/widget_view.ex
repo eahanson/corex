@@ -3,6 +3,7 @@ defmodule CorexWeb.WidgetView do
 
   import Corex.Format
 
+  alias Corex.Presence
   alias CorexWeb.DataTableView.DataTable
   alias CorexWeb.DataTableView.Form
 
@@ -95,8 +96,10 @@ defmodule CorexWeb.WidgetView do
           {_, icon} -> icon
         end
 
+      autofocus = if form.fields |> Presence.is_blank?(), do: "autofocus", else: nil
+
       form
-      |> field(%{name: name, icon: icon, input_fun: &Phoenix.HTML.Form.text_input/3, autocomplete: nil})
+      |> field(%{name: name, icon: icon, input_fun: &Phoenix.HTML.Form.text_input/3, autocomplete: nil, autofocus: autofocus})
     end
 
     def password_input(%Form{} = form, name) do
