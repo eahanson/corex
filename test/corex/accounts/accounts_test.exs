@@ -8,15 +8,15 @@ defmodule Corex.AccountsTest do
 
   describe "list_users/0" do
     test "returns all users" do
-      "user1" |> Mom.user_attrs |> Accounts.create_user
-      "user2" |> Mom.user_attrs |> Accounts.create_user
+      "user1" |> Mom.user_attrs() |> Accounts.create_user()
+      "user2" |> Mom.user_attrs() |> Accounts.create_user()
       assert Accounts.list_users() |> Extra.Enum.tids() == ~w{user1 user2}
     end
   end
 
   describe "get_user" do
     setup do
-      {:ok, user} = Mom.user_attrs("test") |> Accounts.create_user
+      {:ok, user} = Mom.user_attrs("test") |> Accounts.create_user()
       [user: user]
     end
 
@@ -68,7 +68,7 @@ defmodule Corex.AccountsTest do
 
   describe "delete_user/1 " do
     test "deletes the user" do
-      {:ok, user} = Mom.user_attrs |> Accounts.create_user()
+      {:ok, user} = Mom.user_attrs("user") |> Accounts.create_user()
       assert {:ok, %User{}} = Accounts.delete_user(user)
       assert_raise Ecto.NoResultsError, fn -> Accounts.get_user!(user.id) end
     end
@@ -76,7 +76,7 @@ defmodule Corex.AccountsTest do
 
   describe "change_user/1" do
     test "returns a user changeset" do
-      {:ok, user} = Mom.user_attrs |> Accounts.create_user()
+      {:ok, user} = Mom.user_attrs("user") |> Accounts.create_user()
       assert %Ecto.Changeset{} = Accounts.change_user(user)
     end
   end

@@ -6,12 +6,19 @@ defmodule Corex.Accounts.User do
   alias Corex.Accounts.User
 
   schema "users" do
-    field(:encrypted_password, :string)
-    field(:email, :string)
-    field(:password, :string, virtual: true)
-    field(:tid, :string)
+    field :admin, :boolean, read_after_writes: true
+    field :encrypted_password, :string
+    field :email, :string
+    field :password, :string, virtual: true
+    field :tid, :string
 
     timestamps()
+  end
+
+  def admin_registration_changeset(user, attrs) do
+    user
+    |> cast(attrs, [:admin])
+    |> registration_changeset(attrs)
   end
 
   def registration_changeset(user, attrs) do
@@ -64,4 +71,10 @@ defmodule Corex.Accounts.User do
         |> validate_required([:encrypted_password])
     end
   end
+
+  def role(nil), do: :guest
+  def role(%User{id: nil}), do: :guest
+  def role(%User{admin: nil}), do: :member
+  def role(%User{admin: false}), do: :member
+  def role(%User{admin: true}), do: :admin
 end
