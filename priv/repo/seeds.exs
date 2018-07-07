@@ -9,3 +9,8 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+alias Corex.Accounts
+
+%{email: "admin@example.com", password: "password123", admin: true} |> Accounts.create_admin()
+%{email: "user@example.com", password: "password123", admin: false} |> Accounts.create_user()
