@@ -1,8 +1,6 @@
 defmodule CorexWeb.WidgetView do
   use CorexWeb, :view
 
-  import Corex.Format
-
   alias Corex.Presence
   alias CorexWeb.DataTableView.DataTable
   alias CorexWeb.DataTableView.Form
