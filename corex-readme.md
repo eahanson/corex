@@ -40,7 +40,7 @@ Create a new project, and set the Corex repo as a remote:
     git remote add corex git@github.com:eahanson/corex
     git fetch corex
     git reset --hard corex/master
-    git create project-name
+    # create project-name on github
     git remote add origin git@github.com:[organization/project-name]
     git push -u origin master
     
